@@ -805,7 +805,8 @@
         <div style="width:25%" class="column">
           <p >웹개발팀<br>책임 연구원<br>
             2016년 7월 ~ 현재<br>
-            (4년 7개월~)</p>
+            (<span class="year"></span>년 <span class="month"></span>개월)
+          </p>
           <p >
           </p>
         </div>
@@ -1142,11 +1143,11 @@
     <h2 class="section-title block-color-teal_background" id="project-animation">웹 애니메이션과 차트</h2>
     <ul class="bulleted-list">
       <li>클라이언트(디자이너)가 원하는 샘플 영상과 비슷한 느낌을 만들기 위해 프레임 단위로 샘플을 분석하고, 특징들을 체계화하여 개발</li>
-      <li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화를 위해 노력</li>
+      <li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화</li>
     </ul>
     <hr/>
     <h2>더 세로 TV 오디오 비쥬얼라이저</h2>
-    <p>모바일에서 재생한 미디어를 리눅스 PC에서 FFT 음형과 함께 재생중인 노래의 제목, 가수까지 보여주는 기능 개발</p>
+    <p>모바일에서 재생한 미디어를 FFT 분석과 함께 재생중인 노래의 제목, 가수까지 보여주는 기능 개발</p>
     <p ><strong>수행 업무</strong>
     <div class="indented">
       <ul class="bulleted-list">
@@ -1303,17 +1304,11 @@
     <h2 class="section-title block-color-teal_background">개인 프로젝트</h2>
     <h2>NCS 기출문제</h2>
     <p>NCS 수학 문제를 자동으로 생성하여 정답, 풀이등을 제공하는 앱</p>
-    <p >Android ⭐3.83 (Download 13K) <a></a></p>
-    <p >iOS ⭐4.5 (Download 7K)</p>
-    <p ><strong>기획 의도</strong></p>
+    <p >Android ⭐3.83 (Download 13K) iOS ⭐4.5 (Download 7K)</p>
+    <p ><strong>개발 의도</strong></p>
       <div class="indented">
         <ul class="bulleted-list">
           <li>NCS 수학 문제집을 보면서 연습할 수 있는 예제의 양이 부족하다고 생각하여, 수학 문제를 자동으로 만들어주는 앱을 개발해보고 싶었음</li>
-        </ul>
-      </div>
-      <p ><strong>개발 목적</strong></p>
-      <div class="indented">
-        <ul class="bulleted-list">
           <li>모바일 개발을 위해 공부한 Flutter를 활용하여 가시적인 앱 개발 및 서비스 운영</li>
           <li>Firebase를 이용하여 Serverless 경험 쌓기</li>
           <li>Firebase Auth, Firestore를 활용하여 사용자 기록 쌓기</li>
@@ -1321,14 +1316,7 @@
           <li>수학 문제 자동 생성을 위해 수학 문제집들을 분석하여 문제와 정답지, 보기 등을 템플릿화하고, 이를 서버에서 관리하여 문제에 에러가 있을 경우 빠르게 배포</li>
         </ul>
       </div>
-      <p >
-      </p>
-      <p ><strong>도전 과제</strong></p>
-      <div class="indented">
-        <ul class="bulleted-list">
-          <li>Javascript 특성 상 수학에서 분수 등을 계산할 때 소수점이 되어 정확하게 안떨어지거나 정수가 float되는 이슈 발생</li>
-        </ul>
-      </div>
+      
     <div class="column-list">
       <div style="width:33.33333333333333%" class="column">
         <figure class="image"><a href="assets/image_8.png"><img style="width:1242px" src="assets/image_8.png" /></a>
@@ -1345,6 +1333,7 @@
         </p>
       </div>
     </div>
+    <div class="page-break"></div>
     <h1 class="section-title block-color-yellow_background">Other Experience</h1>
     <p >
     </p>
@@ -1362,6 +1351,7 @@
     </figure>
     <p >
     </p>
+    <div class="page-break"></div>
     <h1 class="section-title block-color-yellow_background">수상경력</h1>
     <h2 >갤럭시 기어 해커톤 2014 우수상</h2>
     <h3>삼성전자 2014-05-28</h3>
@@ -1410,6 +1400,7 @@
     <iframe width="640" height="360" src="https://www.youtube.com/embed/9yTAmCqbXtA" frameborder="0"></iframe>
     <p >
     </p>
+    <div class="page-break"></div>
     <h1 class="section-title block-color-yellow_background">학력 사항</h1>
     <h3 >숭실대 글로벌 미디어 학부 졸업</h3>
     <p >2009년 3월 ~ 2013년 8월 (편입)</p>
@@ -1443,6 +1434,15 @@
     </p>
     </div>
   </article>
+
+  <script>
+    const diff = new Date() - new Date(2016, 6, 1);
+    const day = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    const year = Math.floor(day / 365);
+    const month = Math.floor((day % 365) / 31);
+    document.querySelector('.year').innerText = year;
+    document.querySelector('.month').innerText = month;
+  </script>
 </body>
 
 </html>
