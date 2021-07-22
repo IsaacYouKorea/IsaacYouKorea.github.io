@@ -146,6 +146,7 @@
 
     .column:first-child {
       padding-left: 0;
+      
     }
 
     .column:last-child {
@@ -740,18 +741,46 @@
     }
 
     @media print {
-      .page-break { page-break-before: always; }
-      iframe {display: none;}
-      .section-title {margin-top: 0rem;}
-      .page-cover-image {height: 20vh;}
+      .page-break {
+        page-break-before: always;
+      }
+
+      .page-preserve {
+        page-break-inside: avoid;
+      }
+
+      iframe {
+        display: none;
+      }
+
+      .section-title {
+        margin-top: 0rem;
+      }
+
+      .page-cover-image {
+        height: 20vh;
+      }
+
       hr {
         margin: 1rem 0rem;
       }
+
       .print-display-none {
+        display: none;
+      }
+
+      details {
         display: none;
       }
     }
 
+
+    @media only screen and (max-width: 480px) {
+      .column-list {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -772,65 +801,66 @@
       <h2>Channel</h2>
       <p>Github <a href="https://github.com/isaacyoukorea">https://github.com/isaacyoukorea</a></p>
       <h1 class="section-title block-color-yellow_background">Introduce</h1>
-      <p >고객과 사용자들에게 최고의 결과물을 내기 위해서 필요한 기술을 연습하고 습득하기를 주저하지 않았습니다.</p>
-      <p >프로젝트에 필요한 기술들을 습득하다보니 Web 뿐만 아니라 Hardware 및 3D, Animation 등 사람의 인지와 관련된 분야의 개발을 해볼 수 있었습니다. 특히 최근에는 CPU나 메모리가 충분하지 않은 TV, 냉장고 등 하드한 환경에서도 60fps로 동작되는 웹을 만들기 위해 노력하고 있습니다.</p>
-      <p >이렇게 쌓인 경험치들을 바탕으로 삼성, 빅히트 등 글로벌 기업들에서 오는 다양한 형태의 프로젝트들을 자신감있게 해결할 수 있었고, 끝까지 책임을 다해 좋은 결과들을 만들어왔습니다.</p>
-      <p >규모가 큰 프로젝트를 하다보니 협업의 중요성에 대해서 다시금 깨닫고 팀 리딩을 위해 Typescript나 개발 설계 등에 대해서도 관심을 갖고 공부하고 있습니다.</p>
+      <p>고객과 사용자들에게 최고의 결과물을 내기 위해서 필요한 기술을 연습하고 습득하기를 주저하지 않았습니다.</p>
+      <p>프로젝트에 필요한 기술들을 습득하다보니 Web 뿐만 아니라 Hardware 및 3D, Animation 등 사람의 인지와 관련된 분야의 개발을 해볼 수 있었습니다. 특히 최근에는 CPU나 메모리가
+        충분하지 않은 TV, 냉장고 등 하드한 환경에서도 60fps로 동작되는 웹을 만들기 위해 노력하고 있습니다.</p>
+      <p>이렇게 쌓인 경험치들을 바탕으로 삼성, 하이브(빅히트) 등 글로벌 기업들에서 오는 다양한 형태의 프로젝트들을 자신감있게 해결할 수 있었고, 끝까지 책임을 다해 좋은 결과들을 만들어왔습니다.</p>
+      <p>규모가 큰 프로젝트를 하다보니 협업의 중요성에 대해서 다시금 깨닫고 팀 리딩을 위해 Typescript나 개발 설계 등에 대해서도 관심을 갖고 공부하고 있습니다.</p>
       <div class="page-break"></div>
       <h1 class="section-title block-color-yellow_background">Skills</h1>
-      <h3 >Web</h3>
-      <p >숙달됨 - 클라이언트, 사용자에게 배포되는 프로젝트에서 여러차례 사용해봄</p>
+      <h3>Web</h3>
+      <p>숙달됨 - 클라이언트, 사용자에게 배포되는 프로젝트에서 여러차례 사용해봄</p>
       <p>
         Javascript, Typescript, Vuejs, Vuex, SCSS, Webpack, Prerender, HTML, PUG, Docker, Tizen, WebOS, Canvas,
         p5.js, TweenMax, D3, Swiper</p>
-      <p >훈련중 - 사내 프로젝트에서 사용해보거나, 배포 프로젝트에서 한 번정도 사용해 본 경험이 있음</p>
-        <p>ReactJS, Redux, NextJS, NuxtJS, GraphQL, WebWorker, WebGL</p>
-      <p ></p>
-      <h3 >Mobile Application</h3>
-      <p >Flutter, Android</p>
-      <h3 >ETC</h3>
-      <p >C++, Python3</p>
-      <h3 ><strong>Backend</strong></h3>
-      <p >AWS, Firebase</p>
-      <h3 >Hardware</h3>
-      <p >Arduino</p>
-      <h3 >3D 그래픽스</h3>
-      <p >Unity3D(C#), Vuforia (AR)</p>
-      <h3 >협업도구</h3>
-      <p >Git, Jira, Confluence, Zeplin</p>
+      <p>훈련중 - 사내 프로젝트에서 사용해보거나, 배포 프로젝트에서 한 번정도 사용해 본 경험이 있음</p>
+      <p>ReactJS, Redux, NextJS, NuxtJS, GraphQL, WebWorker, WebGL</p>
+      <p></p>
+      <h3>Mobile Application</h3>
+      <p>Flutter, Android</p>
+      <h3>ETC</h3>
+      <p>C++, Python3</p>
+      <h3><strong>Backend</strong></h3>
+      <p>AWS, Firebase</p>
+      <h3>Hardware</h3>
+      <p>Arduino</p>
+      <h3>3D 그래픽스</h3>
+      <p>Unity3D(C#), Vuforia (AR)</p>
+      <h3>협업도구</h3>
+      <p>Git, Jira, Confluence, Zeplin</p>
       <div class="page-break"></div>
       <h1 class="section-title block-color-yellow_background">경력 사항</h1>
-      <h2 >핸드스튜디오</h2>
+      <h2>핸드스튜디오</h2>
       <div class="column-list">
         <div style="width:25%" class="column">
-          <p >웹개발팀<br>책임 연구원<br>
+          <p>웹개발팀<br>책임 연구원<br>
             2016년 7월 ~ 현재<br>
             (<span class="year"></span>년 <span class="month"></span>개월)
           </p>
-          <p >
+          <p>
           </p>
         </div>
         <div style="width:75%" class="column">
           <ul class="bulleted-list">
-            <li>삼성, 빅히트, 카카오, NC 다이노스 등 다양한 글로벌 기업과 함께 다수의 서비스 프로젝트 개발</li>
+            <li>삼성, 하이브(빅히트), 카카오, NC 다이노스 등 다양한 글로벌 기업과 함께 다수의 서비스 프로젝트 개발</li>
             <li>웹이 동작되는 PC, 모바일, TV, 냉장고 등 다양한 플랫폼과 다양한 성능의 기기에서 개발</li>
             <li>제품화에 성공한 더 세로 TV와 갤럭시 워치 HW 프로토타이핑 개발</li>
             <li>좋은 퍼포먼스의 웹 애니메이션 개발</li>
           </ul>
         </div>
       </div>
-      <p >
+      <p>
       </p>
-      <hr >
+      <hr>
       </p>
       <h2>브이터치 (스타트업)</h2>
       <div class="column-list">
         <div style="width:25%" class="column">
-          <p >SW Engineering 팀<br>연구원<br>
+          <p>SW Engineering 팀<br>연구원<br>
             2013년 5월
             ~ 2015년 6월<br>
             (2년 1개월)</p>
-          <p >
+          <p>
           </p>
         </div>
         <div style="width:75%" class="column">
@@ -841,15 +871,14 @@
             <li>시제품 개발 및 설치 (롯데시네마, 상암 디지털 파빌리온, 광고문화회관 등)</li>
             <li>모바일과 동작인식 매칭 시스템 관련 특허 등록 (출원번호 1020140062668)</li>
           </ul>
-          <iframe width="640" height="360" src="https://www.youtube.com/embed/2K7EiolkK3Y"
-                frameborder="0"></iframe>
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/2K7EiolkK3Y" frameborder="0"></iframe>
         </div>
       </div>
-      <hr >
-      <h2 >삼성 SDS</h2>
+      <hr>
+      <h2>삼성 SDS</h2>
       <div class="column-list">
         <div style="width:25%" class="column">
-          <p >SW Engineering 팀<br />인턴<br>
+          <p>SW Engineering 팀<br />인턴<br>
             2012년 6월
             ~ 2012년 8월<br>(2개월)</p>
         </div>
@@ -862,7 +891,7 @@
           </ul>
         </div>
       </div>
-      <p >
+      <p>
       </p>
       <div class="page-break"></div>
       <h1 class="section-title block-color-yellow_background">프로젝트</h1>
@@ -888,16 +917,16 @@
       <ul class="bulleted-list">
         <li>각 디바이스 별 특징과 UX를 고려한 개발</li>
       </ul>
-      <p >TV나 냉장고와 같은 저사양의 디바이스들에서 나쁜 퍼포먼스는 많은 유저들을 이탈하게 만드는 중요한 요소가 됩니다. 저는 이러한 디바이스들에서도 사용자들이 자연스럽다고 느낄 수 있는
+      <p>TV나 냉장고와 같은 저사양의 디바이스들에서 나쁜 퍼포먼스는 많은 유저들을 이탈하게 만드는 중요한 요소가 됩니다. 저는 이러한 디바이스들에서도 사용자들이 자연스럽다고 느낄 수 있는
         퍼포먼스를 만들기 위해 렌더링 비용과 메모리 사용량등을 개선하였고, 다양한 디바이스에서 제공되는 자체 API들을 통합하여 개발을 더욱 구조화할 수 있도록 하는데 역량을 집중하였습니다. 또한 TV는
         포인터 기반인 모바일과 터치와는 다른 키-포커스 형태로 동작되기 때문에 이에 대응할 수 있는 레이아웃 시스템을 개발하였습니다.
       </p>
-      <hr/>
-      <h2 >위버스 TV</h2>
-      <p >빅히트의 서비스 위버스를 TV에서도 시청할 수 있도록 컨버팅한 앱</p>
+      <hr />
+      <h2>위버스 TV</h2>
+      <p>하이브(빅히트)의 서비스 위버스를 TV에서도 시청할 수 있도록 웹앱화</p>
       <div class="column-list">
         <div style="width:18.75%" class="column">
-          <p ><strong>활용기술</strong></p>
+          <p><strong>활용기술</strong></p>
           <ul class="bulleted-list">
             <li>VueJS (decorator)</li>
             <li>Typescript</li>
@@ -907,9 +936,9 @@
           </ul>
         </div>
         <div style="width:81.25%" class="column">
-          <p >
+          <p>
           </p>
-          <p ><strong>수행 업무</strong></p>
+          <p><strong>수행 업무</strong></p>
           <ul class="bulleted-list">
             <li>개발 총괄 - 구조 설계부터 런칭까지 책임</li>
             <li>TV Layout 시스템 개발</li>
@@ -918,16 +947,30 @@
             <li>ConnectSDK를 활용하여 모바일에서 이어보기 기능 개발</li>
             <li>4k DRM 적용된 Dash 영상 플레이어 경험</li>
           </ul>
-        </div>     
+        </div>
       </div>
-      <p ><strong>소개 자료</strong></p>
-      <figure id="5b50d290-fc40-47c8-bb32-e5e1d911ed05"><a href="https://www.yna.co.kr/view/AKR20210109061600003" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">&quot;대화면으로 BTS를&quot;...삼성 스마트TV, 빅히트엔터 &#x27;위버스&#x27; 론칭 | 연합뉴스</div><div class="bookmark-description">(서울=연합뉴스) 김영신 기자 = 삼성전자[005930] 스마트 TV에서 빅히트엔터테인먼트가 운영하는 팬 커뮤니티 플랫폼 &#x27;위버스&#x27;(Weverse)로 콘텐츠를 이용할 수 있다. 10일 삼성전자에 따르면 전 세계에서 2018년형 이후 삼성 스마트 TV가 지난해 12월 말부터 위버스 애플리케이션 서비스를 시작했다. 위버스는 방탄소년단(BTS), 세븐틴, 여자친구 등이 소속한 빅히트엔터테인먼트의 자회사 비엔엑스(beNX)가 운영하는 글로벌 팬 커뮤니티 플랫폼이다.</div></div><div class="bookmark-href"><img src="https://r.yna.co.kr/www/home_n/v02/img/favicon.ico" class="icon bookmark-icon"/>https://www.yna.co.kr/view/AKR20210109061600003</div></div><img src="https://img0.yna.co.kr/etc/inner/KR/2021/01/09/AKR20210109061600003_01_i_P4.jpg" class="bookmark-image"/></a></figure>
+      <p><strong>소개 자료</strong></p>
+      <figure id="5b50d290-fc40-47c8-bb32-e5e1d911ed05"><a href="https://www.yna.co.kr/view/AKR20210109061600003"
+          class="bookmark source">
+          <div class="bookmark-info">
+            <div class="bookmark-text">
+              <div class="bookmark-title">&quot;대화면으로 BTS를&quot;...삼성 스마트TV, 하이브(빅히트)엔터 &#x27;위버스&#x27; 론칭 | 연합뉴스</div>
+              <div class="bookmark-description">(서울=연합뉴스) 김영신 기자 = 삼성전자[005930] 스마트 TV에서 하이브(빅히트)엔터테인먼트가 운영하는 팬 커뮤니티 플랫폼
+                &#x27;위버스&#x27;(Weverse)로 콘텐츠를 이용할 수 있다. 10일 삼성전자에 따르면 전 세계에서 2018년형 이후 삼성 스마트 TV가 지난해 12월 말부터 위버스
+                애플리케이션 서비스를 시작했다. 위버스는 방탄소년단(BTS), 세븐틴, 여자친구 등이 소속한 하이브(빅히트)엔터테인먼트의 자회사 비엔엑스(beNX)가 운영하는 글로벌 팬 커뮤니티 플랫폼이다.
+              </div>
+            </div>
+            <div class="bookmark-href"><img src="https://r.yna.co.kr/www/home_n/v02/img/favicon.ico"
+                class="icon bookmark-icon" />https://www.yna.co.kr/view/AKR20210109061600003</div>
+          </div><img src="https://img0.yna.co.kr/etc/inner/KR/2021/01/09/AKR20210109061600003_01_i_P4.jpg"
+            class="bookmark-image" />
+        </a></figure>
       <details style="width: 100%">
         <summary><strong>더 알아보기</strong></summary>
         <pre>
-          위버스는 아티스트와 팬들의 소통 창구 역할을 하는 빅히트의 자체 서비스입니다.
-          BTS로 유명한 빅히트의 서비스답게 이미 글로벌하게 많은 사람들에게 사랑받고 있습니다.
-          하지만 이 플랫폼에서 서비스되는 영상을 TV와 같은 큰화면으로 보기 위해서 팬들은 HDMI를 연결해야 하거나 웹페이지를 우회해서 보는 등 불편이 있었고, 빅히트 이에 TV 서비스의 개발 필요성을 느끼고 저희에게 제작을 의뢰하였습니다.
+          위버스는 아티스트와 팬들의 소통 창구 역할을 하는 하이브(빅히트)의 자체 서비스입니다.
+          BTS로 유명한 하이브(빅히트)의 서비스답게 이미 글로벌하게 많은 사람들에게 사랑받고 있습니다.
+          하지만 이 플랫폼에서 서비스되는 영상을 TV와 같은 큰화면으로 보기 위해서 팬들은 HDMI를 연결해야 하거나 웹페이지를 우회해서 보는 등 불편이 있었고, 하이브(빅히트) 이에 TV 서비스의 개발 필요성을 느끼고 저희에게 제작을 의뢰하였습니다.
 
           클라이언트가 제시한 핵심 개발 목표는
           1. 재생 삼성(Web), LG(Web), 안드로이드 TV(Native)에서 동일한 사용성을 가진 앱
@@ -960,56 +1003,60 @@
           다만 삼성 특정 모델에서 서버로부터 받아온 SetCookie를 지원하지 않아서 발생하는 이슈, Tizen 플랫폼에서 4k 영상 지원 유무를 판단할 때 deprecated API를 사용하는 등 이슈가 있어고, 이를 포크를 떠서 저희의 시스템에 맞게 수정하여 해결할 수 있었습니다.
         </pre>
       </details>
-      <hr >
-      <h2>멜론 TV</h2>
-      <p >카카오 멜론의 자사 서비스를 TV에서 사용할 수 있도록 컨버팅한 앱</p>
-      <div class="column-list">
-        <div style="width:18.75%" class="column">
-          <p ><strong>활용 기술</strong></p>
-          <ul class="bulleted-list">
-            <li>VueJS (decorator)</li>
-            <li>Typescript</li>
-            <li>Tizen</li>
-          </ul>
-        </div>
-        <div style="width:81.25%" class="column">
-          <p ><strong>수행 업무</strong></p>
-          <div class="indented">
+      <hr>
+      <div class="page-preserve">
+        <h2>멜론 TV</h2>
+        <p>카카오 멜론의 자사 서비스를 TV에서 사용할 수 있도록 웹앱화</p>
+        <div class="column-list">
+          <div class="column">
+            <p><strong>활용 기술</strong></p>
             <ul class="bulleted-list">
-              <li>TV Bixby를 이용한 음악 검색 서비스 개발</li>
-              <li>삼성 IoT 플랫폼인 SmartThings와 연계한 다기기 환경(Multi Device Environment)에서의 멜론 이어듣기 개발</li>
+              <li>VueJS (decorator)</li>
+              <li>Typescript</li>
+              <li>Tizen</li>
             </ul>
           </div>
+          <div class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>TV Bixby를 이용한 음악 검색 서비스 개발</li>
+                <li>삼성 IoT 플랫폼인 SmartThings와 연계한 다기기 환경(Multi Device Environment)에서의 멜론 이어듣기 개발</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <hr>
       </div>
-      <hr >
+
       </p>
-      <h2 >스팀링크 TV </h2>
-      <p >게임 배급사 스팀의 게임을 게임 컨트롤러와 미러링으로 TV에서도 즐길 수 있는 앱</p>
-      <div class="column-list">
-        <div style="width:18.75%" class="column">
-          <p ><strong>활용 기술</strong></p>
-          <ul class="bulleted-list">
-            <li>Vanila JS</li>
-            <li>Tizen</li>
-          </ul>
-          <p >
-          </p>
-        </div>
-        <div style="width:81.25%" class="column">
-          <p ><strong>수행 업무</strong></p>
-          <div class="indented">
+      <div class="page-preserve">
+        <h2>스팀링크 TV </h2>
+        <p>게임 배급사 스팀의 게임을 게임 컨트롤러와 미러링으로 TV에서도 즐길 수 있는 앱</p>
+        <div class="column-list">
+          <div style="width:18.75%" class="column">
+            <p><strong>활용 기술</strong></p>
             <ul class="bulleted-list">
-              <li>개발 총괄로써 설계부터 런칭까지 책임</li>
-              <li>스팀 연결까지 필요한 모든 과정(PC 검색 및 설정 등) 개발</li>
-              <li>조이스틱 및 별도 게임 컨트롤러 인식 및 제어 기능 개발</li>
+              <li>Vanila JS</li>
+              <li>Tizen</li>
             </ul>
+            <p>
+            </p>
+          </div>
+          <div style="width:81.25%" class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>개발 총괄로써 설계부터 런칭까지 책임</li>
+                <li>스팀 연결까지 필요한 모든 과정(PC 검색 및 설정 등) 개발</li>
+                <li>조이스틱 및 별도 게임 컨트롤러 인식 및 제어 기능 개발</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <p ><strong>소개 자료</strong></p>
-          <figure>
-            <a href="https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html" class="bookmark source">
+        <p><strong>소개 자료</strong></p>
+        <figure>
+          <a href="https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html" class="bookmark source">
             <div class="bookmark-info">
               <div class="bookmark-text">
                 <div class="bookmark-title">&quot;삼성 스마트 TV로 PC용 게임 즐긴다&quot;...삼성전자, 美 게임사 밸브와 &#x27;스팀링크&#x27; 앱 제공
@@ -1023,40 +1070,45 @@
                   class="icon bookmark-icon" />https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html
               </div>
             </div><img src="https://image.chosun.com/sitedata/image/201708/13/2017081300365_0.jpg"
-              class="bookmark-image" /></a>
-          </figure>
-      <p >
+              class="bookmark-image" />
+          </a>
+        </figure>
+      </div>
+      <p>
       </p>
-      <hr >
+      <hr>
       </p>
-      <h2 >게임 TV</h2>
-      <p >유튜브, 트위치, 아프리카 TV의 게임 콘텐츠를 큐레이션하여 제공하는 TV앱</p>
-      <div class="column-list">
-        <div style="width:18.75%" class="column">
-          <p ><strong>활용 기술</strong></p>
-          <ul class="bulleted-list">
-            <li>AngularJS</li>
-            <li>Coffeescript</li>
-            <li>Jenkins</li>
-            <li>HLS.js </li>
-          </ul>
-        </div>
-        <div style="width:81.25%" class="column">
-          <p ><strong>수행 업무</strong></p>
-          <div class="indented">
+      <div class="page-preserve">
+        <h2>게임 TV</h2>
+        <p>유튜브, 트위치, 아프리카 TV의 게임 콘텐츠를 큐레이션하여 제공하는 TV앱</p>
+        <div class="column-list">
+          <div style="width:18.75%" class="column">
+            <p><strong>활용 기술</strong></p>
             <ul class="bulleted-list">
-              <li>유튜브, 트위치, 아프리카 3개 사에서 각각 제공하는 외부 플레이어를 공통적으로 사용 및 에러 처리할 수 있는 인터페이스 개발</li>
-              <li>HLS(Http Live Streaming) 플레이어 활용하여 m3u8형태의 트위치 영상 재생 및 제어, 에러 처리 등 개발</li>
-              <li>Jenkins 이용하여 player모듈을 Split하여 배포</li>
-              <li>Tizen Notification 기능 활용 실시간 알림 서비스 구현</li>
-              <li>Tizen Background Service를 이용하여 관심팀 일정 받아오기 등 구현</li>
+              <li>AngularJS</li>
+              <li>Coffeescript</li>
+              <li>Jenkins</li>
+              <li>HLS.js </li>
             </ul>
+          </div>
+          <div style="width:81.25%" class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>유튜브, 트위치, 아프리카 3개 사에서 각각 제공하는 외부 플레이어를 공통적으로 사용 및 에러 처리할 수 있는 인터페이스 개발</li>
+                <li>HLS(Http Live Streaming) 플레이어 활용하여 m3u8형태의 트위치 영상 재생 및 제어, 에러 처리 등 개발</li>
+                <li>Jenkins 이용하여 player모듈을 Split하여 배포</li>
+                <li>Tizen Notification 기능 활용 실시간 알림 서비스 구현</li>
+                <li>Tizen Background Service를 이용하여 관심팀 일정 받아오기 등 구현</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <p >
+
+      <p>
       </p>
-      <p >
+      <p>
       </p>
       <div class="page-break"></div>
       <h2 class="section-title block-color-teal_background" id="project-web">웹 - 모바일, PC</h2>
@@ -1066,12 +1118,12 @@
         <li>웹접근성 Level AA</li>
         <li>다국어 처리 (i18n)</li>
       </ul>
-      <hr/>
+      <hr />
       <h2>삼성전자 냉장고 글로벌 홍보 사이트</h2>
       <p></p>
       <div class="column-list">
         <div style="width:18.75%" class="column">
-          <p ><strong>활용 기술</strong></p>
+          <p><strong>활용 기술</strong></p>
           <ul class="bulleted-list">
             <li>VueJS</li>
             <li>Prerender</li>
@@ -1079,22 +1131,22 @@
           </ul>
         </div>
         <div style="width:81.15%" class="column">
-          <p ><strong>수행업무</strong></p>
+          <p><strong>수행업무</strong></p>
           <ul class="bulleted-list">
             <li>삼성전자 내에 포함되기 위한 최소 웹접근성 Level AA 기준에 만족하는 웹사이트 제작</li>
             <li>PC부터 모바일까지 해상도 대응 및 적응형 적용</li>
             <li>50여개 언어로 번역되어 SEO가 적용될 수 있도록 Prerender 적용</li>
           </ul>
-          <p >
+          <p>
           </p>
         </div>
       </div>
-      <hr >
+      <hr>
       </p>
-    </p>
-      <h2 >StarDevPortal</h2>
-      <p >삼성 사내에서 사용되는 AI 관련 내부 서비스 개발</p>
-      <p ><strong>수행 업무 </strong></p>
+      </p>
+      <h2>StarDevPortal</h2>
+      <p>삼성 사내에서 사용되는 AI 관련 내부 서비스 개발</p>
+      <p><strong>수행 업무 </strong></p>
       <div class="indented">
         <ul class="bulleted-list">
           <li>삼성에서 개발한 자체 AI 10여 종을 직접 파일을 업로드하면서 체험할 수 있는 페이지 개발</li>
@@ -1115,52 +1167,56 @@
         </pre>
       </details>
       <hr>
-      <h2 >Tisplay</h2>
-      <p >스트리머에게 도네이션 서비스를 하는 스타트업의 웹사이트 개발</p>
-      <p ><strong>수행 업무 </strong></p>
+      <div class="page-preserve">
+        <h2>Tisplay</h2>
+        <p>스트리머에게 도네이션 서비스를 하는 스타트업의 웹사이트 개발</p>
+        <p><strong>수행 업무 </strong></p>
+        <div class="indented">
+          <ul class="bulleted-list">
+            <li>유저, 스트리머가 웹 상에서 이미지 및 동영상을 Crop하여 올릴 수 있는 웹 저작도구 개발</li>
+            <li>티스플레이 소개 화면 퍼블리싱</li>
+          </ul>
+        </div>
+        <figure>
+          <a href="https://www.tisplay.kr/" class="bookmark source">
+            <div class="bookmark-info">
+              <div class="bookmark-text">
+                <div class="bookmark-title">Tisplay</div>
+                <div class="bookmark-description">&#x27;(주)트리니들&#x27;(이하 &#x27;회사&#x27;)가 운영하는 &#x27;티스플레이
+                  (tisplay)&#x27;은 정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 &#x27;정보통신망법&#x27;) 제27조의 2에 의거 이용자의 개인정보보호와 권익을 보호하고
+                  관련된
+                  고충 및 애로사항을 신속하게 처리하기 위해 아래의 개인정보처리방침을 제정·운영하고 있습니다. 회사는 관계법령에서 규정하고 있는 책임과 의무를 준수하고 실천하기 위해 최선의 노력을 하고
+                  있습니다.</div>
+              </div>
+              <div class="bookmark-href"><img src="https://www.tisplay.kr/ko/favicon_tisplay.ico"
+                  class="icon bookmark-icon" />https://www.tisplay.kr/</div>
+            </div><img src="https://tisplay2.z32.web.core.windows.net/images/img_main_03_01.png"
+              class="bookmark-image" />
+          </a>
+        </figure>
+      </div>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background" id="project-animation">웹 애니메이션과 차트</h2>
+      <ul class="bulleted-list">
+        <li>클라이언트(디자이너)가 원하는 샘플 영상과 비슷한 느낌을 만들기 위해 프레임 단위로 샘플을 분석하고, 특징들을 체계화하여 개발</li>
+        <li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화</li>
+      </ul>
+      <hr />
+      <h2>더 세로 TV 오디오 비쥬얼라이저</h2>
+      <p>모바일에서 재생한 미디어를 FFT 분석과 함께 재생중인 노래의 제목, 가수까지 보여주는 기능 개발</p>
+      <p><strong>수행 업무</strong>
       <div class="indented">
         <ul class="bulleted-list">
-          <li>유저, 스트리머가 웹 상에서 이미지 및 동영상을 Crop하여 올릴 수 있는 웹 저작도구 개발</li>
-          <li>티스플레이 소개 화면 퍼블리싱</li>
-        </ul>
-      </div> 
-      <figure>
-        <a href="https://www.tisplay.kr/" class="bookmark source">
-        <div class="bookmark-info">
-          <div class="bookmark-text">
-            <div class="bookmark-title">Tisplay</div>
-            <div class="bookmark-description">&#x27;(주)트리니들&#x27;(이하 &#x27;회사&#x27;)가 운영하는 &#x27;티스플레이
-              (tisplay)&#x27;은 정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 &#x27;정보통신망법&#x27;) 제27조의 2에 의거 이용자의 개인정보보호와 권익을 보호하고 관련된
-              고충 및 애로사항을 신속하게 처리하기 위해 아래의 개인정보처리방침을 제정·운영하고 있습니다. 회사는 관계법령에서 규정하고 있는 책임과 의무를 준수하고 실천하기 위해 최선의 노력을 하고
-              있습니다.</div>
-          </div>
-          <div class="bookmark-href"><img src="https://www.tisplay.kr/ko/favicon_tisplay.ico"
-              class="icon bookmark-icon" />https://www.tisplay.kr/</div>
-        </div><img src="https://tisplay2.z32.web.core.windows.net/images/img_main_03_01.png"
-          class="bookmark-image" /></a>
-      </figure>
-    <div class="page-break"></div>
-    <h2 class="section-title block-color-teal_background" id="project-animation">웹 애니메이션과 차트</h2>
-    <ul class="bulleted-list">
-      <li>클라이언트(디자이너)가 원하는 샘플 영상과 비슷한 느낌을 만들기 위해 프레임 단위로 샘플을 분석하고, 특징들을 체계화하여 개발</li>
-      <li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화</li>
-    </ul>
-    <hr/>
-    <h2>더 세로 TV 오디오 비쥬얼라이저</h2>
-    <p>모바일에서 재생한 미디어를 FFT 분석과 함께 재생중인 노래의 제목, 가수까지 보여주는 기능 개발</p>
-    <p ><strong>수행 업무</strong>
-    <div class="indented">
-      <ul class="bulleted-list">
-        <li>Web AudioContext를 이용하여 FFT(Fast fourier transform) 적용</li>
-        <li>WebWorker, Offscreen Canvas를 사용하여 높은 fps의 음형 Visualizer 구현</li>
-        <li>Python, Bluez를 통해 현재 재생되고 있는 음악의 아티스트와 제목 가져오기</li>
-        <li>모바일이 PC를 Bluetooth Speaker로 인식할 수 있도록 리눅스 PC 세팅</li>
-    </div>
-    </p>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/u-UKSSa-t8Y" frameborder="0"></iframe>
-    <details style="width: 100%">
-      <summary><strong>더 알아보기</strong></summary>
-      <pre>
+          <li>Web AudioContext를 이용하여 FFT(Fast fourier transform) 적용</li>
+          <li>WebWorker, Offscreen Canvas를 사용하여 높은 fps의 음형 Visualizer 구현</li>
+          <li>Python, Bluez를 통해 현재 재생되고 있는 음악의 아티스트와 제목 가져오기</li>
+          <li>모바일이 PC를 Bluetooth Speaker로 인식할 수 있도록 리눅스 PC 세팅</li>
+      </div>
+      </p>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/u-UKSSa-t8Y" frameborder="0"></iframe>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
         이 프로젝트는 모바일 시대, 세로 콘텐츠 대중화에 따라서 TV를 필요에 따라 가로, 세로로 회전해보면 어떠냐는 아이디어에서 시작하였습니다.
         삼성전자 기획팀에서 저희에게 이러한 기기의 가능성을 검토해보고자 기기 회전을 위한 목업 디바이스 제작부터 회전하는 기기의 특성에 맞는 UX와 실제 스마트폰과 연동할 수 있는 Music Visualizer 등을 의뢰하였습니다.
 
@@ -1179,83 +1235,84 @@
         일반적인 방법으로 캔버스에 그렸을 때 처음 예상과는 달리 프레임 드랍이 심하였고, 이를 해결하기 위해서 캔버스 최적화를 연구하고 자료를 찾아봤습니다.
         그 결과로 WebWorker와 OffscreenCanvas로 메인 쓰레드에서 그리기 영역을 분리하여 성능을 크게 개선하였고, 이 부분에서 굉장히 좋은 평가를 받을 수 있었습니다.
       </pre>
-    </details>
-    <hr/>
-    <h2>Chart Standard for Samsung</h2>
-    <p >삼성 사내에서 사용되는 차트 디자인 스탠다드 룰을 배포 및 설명하기 위한 가이드 차트 제작</p>
-    <p >
-      <strong>수행업무</strong>
-    </p>
-    <div class="indented">
-      <ul class="bulleted-list">
-        <li>시간의 흐름에 따라 수치의 변화를 다이나믹하게 느낄 수 있는 스캐터차트, 버블차트 등 6종 차트 D3로 개발</li>
-        <li>타임라인에 따라 애니메이션</li>
-        <li>호버 시 Custom tooltip 및 차트 별 강조 애니메이션 개발</li>
-        <li>Legacy 토글 기능 개발</li>
-      </ul>
-    </div>
-    <p >
-    </p>
-    <p ><strong>도전 과제</strong></p>
-    <div class="indented">
-      <ul class="bulleted-list">
-        <li>연도에 따라 데이터 값이 변경될 때 이전 셋의 ID 관리를 통해 애니메이션이 정확하게 일어나야 함</li>
-        <li>차트 호버 시 z-index 관리를 통해 유저에게 값을 더욱 명확하게 보여줘야 함</li>
-        <li>스캐터 차트에서 호버 시 값의 변화 추이를 라인으로 표현</li>
-        <li>스캐터 차트에서 Slope탭 선택 시 슬로프 차트로 변경</li>
-      </ul>
-    </div>
-    <iframe width="33%" src="https://www.youtube.com/embed/vfZlbkoJ2TY" frameborder="0"></iframe>
-    <iframe width="33%" src="https://www.youtube.com/embed/tocHcV6O0dg" frameborder="0"></iframe>
-    <iframe width="33%" src="https://www.youtube.com/embed/5-UrKHpwYEo" frameborder="0"></iframe>
-    <iframe width="33%" src="https://www.youtube.com/embed/yz79oHzYYEM" frameborder="0"></iframe>
-    <iframe width="33%" src="https://www.youtube.com/embed/wGS5BUiKulk" frameborder="0"></iframe>
-    <hr/>
-    <h2>Dynamic Music Album Maker</h2>
-    <p >스마트폰 내 이미지들로 나만의 뮤직비디오를 자동으로 생성해주는 프로젝트</p>
-    <p >요구사항이 모호해서 어려웠던 프로젝트로 클라이언트가 골라준 샘플 영상들의 룩앤필과 타임라인을 프레임 단위로 분석하였습니다.</p>
-    <p> 애니메이션 파트를 Enter, Main, Leave 3단계로 쪼갰고, 여기에 랜덤 값을 적용하여 애니메이션 조각을 만들었습니다. 이렇게 만들어진 애니메이션 조각들을 조합하여 하나의 영상처럼 보일 수 있도록 한 프로젝트입니다. </p>
-    <div class="column-list">
-      <div style="width:81.25%" class="column">
-        <p ><strong>수행업무</strong></p>
-        <div class="indented">
-          <ul class="bulleted-list">
-            <li>클라이언트가 원하는 분위기의 동영상들을 프레임 단위로 특징들을 분석</li>
-            <li>해당 영상 특징들을 씬 별로 Processing과 p5.js를 이용하여 템플릿화</li>
-            <li>여러 씬들을 자연스럽게 이어붙일 수 있는 기능 구현</li>
-            <li>스마트폰에서 받아온 이미지와 가사들로 나만의 뮤직비디오를 생성</li>
-          </ul>
+      </details>
+      <hr />
+      <h2>Chart Standard for Samsung</h2>
+      <p>삼성 사내에서 사용되는 차트 디자인 스탠다드 룰을 배포 및 설명하기 위한 가이드 차트 제작</p>
+      <p>
+        <strong>수행업무</strong>
+      </p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>시간의 흐름에 따라 수치의 변화를 다이나믹하게 느낄 수 있는 스캐터차트, 버블차트 등 6종 차트 D3로 개발</li>
+          <li>타임라인에 따라 애니메이션</li>
+          <li>호버 시 Custom tooltip 및 차트 별 강조 애니메이션 개발</li>
+          <li>Legacy 토글 기능 개발</li>
+        </ul>
+      </div>
+      <p>
+      </p>
+      <p><strong>도전 과제</strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>연도에 따라 데이터 값이 변경될 때 이전 셋의 ID 관리를 통해 애니메이션이 정확하게 일어나야 함</li>
+          <li>차트 호버 시 z-index 관리를 통해 유저에게 값을 더욱 명확하게 보여줘야 함</li>
+          <li>스캐터 차트에서 호버 시 값의 변화 추이를 라인으로 표현</li>
+          <li>스캐터 차트에서 Slope탭 선택 시 슬로프 차트로 변경</li>
+        </ul>
+      </div>
+      <iframe width="33%" src="https://www.youtube.com/embed/vfZlbkoJ2TY" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/tocHcV6O0dg" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/5-UrKHpwYEo" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/yz79oHzYYEM" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/wGS5BUiKulk" frameborder="0"></iframe>
+      <hr />
+      <h2>Dynamic Music Album Maker</h2>
+      <p>스마트폰 내 이미지들로 나만의 뮤직비디오를 자동으로 생성해주는 프로젝트</p>
+      <p>요구사항이 모호해서 어려웠던 프로젝트로 클라이언트가 골라준 샘플 영상들의 룩앤필과 타임라인을 프레임 단위로 분석하였습니다.</p>
+      <p> 애니메이션 파트를 Enter, Main, Leave 3단계로 쪼갰고, 여기에 랜덤 값을 적용하여 애니메이션 조각을 만들었습니다. 이렇게 만들어진 애니메이션 조각들을 조합하여 하나의 영상처럼 보일 수
+        있도록 한 프로젝트입니다. </p>
+      <div class="column-list">
+        <div style="width:81.25%" class="column">
+          <p><strong>수행업무</strong></p>
+          <div class="indented">
+            <ul class="bulleted-list">
+              <li>클라이언트가 원하는 분위기의 동영상들을 프레임 단위로 특징들을 분석</li>
+              <li>해당 영상 특징들을 씬 별로 Processing과 p5.js를 이용하여 템플릿화</li>
+              <li>여러 씬들을 자연스럽게 이어붙일 수 있는 기능 구현</li>
+              <li>스마트폰에서 받아온 이미지와 가사들로 나만의 뮤직비디오를 생성</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/ws5Smbf77As" frameborder="0"></iframe>
-    <p >
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/ws5Smbf77As" frameborder="0"></iframe>
+      <p>
 
-    </p>
-    <div class="page-break"></div>
-    <h2 class="section-title block-color-teal_background">하드웨어 프로토타이핑</h2>
-    <ul class="bulleted-list">
-      <li>삼성전자 제품 디자인팀과 협업하여 신제품의 하드웨어 목업과 함께 UI/UX 디자인을 프레젠테이션 하기 위한 데모 웹앱을 개발하여 제품들이 실제 상용화되는데 성공함</li>
-      <li>Arduino ↔ NodeJS ↔ Web 간 Serial, Websocket 통신 인터페이스 개발</li>
-      <li>다양한 종류의 Sensor, Actuator를 웹과 결합</li>
-    </ul>
-    <hr/>
-    <h2>삼성 더 세로TV 1, 2차 프로토타이핑</h2>
-    <p>더 세로 TV의 목업 하드웨어와 데모앱을 제작하여 시나리오 및 사용성을 체크하고, 제품화 컨펌을 위한 데모 제작</p>
-    <p ><strong>수행업무</strong></p>
-    <div class="indented">
+      </p>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background">하드웨어 프로토타이핑</h2>
       <ul class="bulleted-list">
-        <li>전체 개발 리딩</li>
-        <li>하드웨어 제어를 위한 Arduino 개발 (Event Queue, Button, Relay를 이용한 예외 상황 처리 등)</li>
-        <li>가로 ↔ 세로 변환되는 TV의 특징을 살린 데모웹 개발</li>
+        <li>삼성전자 제품 디자인팀과 협업하여 신제품의 하드웨어 목업과 함께 UI/UX 디자인을 프레젠테이션 하기 위한 데모 웹앱을 개발하여 제품들이 실제 상용화되는데 성공함</li>
+        <li>Arduino ↔ NodeJS ↔ Web 간 Serial, Websocket 통신 인터페이스 개발</li>
+        <li>다양한 종류의 Sensor, Actuator를 웹과 결합</li>
       </ul>
-    </div>
-    <figure class="image"><a href="assets/image_7.png"><img style="width:1000px" src="assets/image_7.png" /></a>
-      <figcaption>출처 : 삼성전자 뉴스룸</figcaption>
-    </figure>
-    <details style="width: 100%">
-      <summary><strong>더 알아보기</strong></summary>
-      <pre>
+      <hr />
+      <h2>삼성 더 세로TV 1, 2차 프로토타이핑</h2>
+      <p>더 세로 TV의 목업 하드웨어와 데모앱을 제작하여 시나리오 및 사용성을 체크하고, 제품화 컨펌을 위한 데모 제작</p>
+      <p><strong>수행업무</strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>전체 개발 리딩</li>
+          <li>하드웨어 제어를 위한 Arduino 개발 (Event Queue, Button, Relay를 이용한 예외 상황 처리 등)</li>
+          <li>가로 ↔ 세로 변환되는 TV의 특징을 살린 데모웹 개발</li>
+        </ul>
+      </div>
+      <figure class="image"><a href="assets/image_7.png"><img style="width:1000px" src="assets/image_7.png" /></a>
+        <figcaption>출처 : 삼성전자 뉴스룸</figcaption>
+      </figure>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
         이 프로젝트는 모바일 시대, 세로 콘텐츠 대중화에 따라서 TV를 필요에 따라 가로, 세로로 회전해보면 어떠냐는 아이디어에서 시작하였습니다.
         삼성전자 기획팀에서 저희에게 이러한 기기의 가능성을 검토해보고자 기기 회전을 위한 목업 디바이스 제작부터 회전하는 기기의 특성에 맞는 UX와 실제 스마트폰과 연동할 수 있는 Music Visualizer 등을 의뢰하였습니다.
 
@@ -1275,37 +1332,39 @@
         특히 하드웨어와 PC의 통신이 끊기거나, 명령어를 보냈는데 하드웨어의 상태가 이에 대응을 못 하는 상황이거나 혹은 누락되어 기기가 명령을 수행하지 못하는 상황은 상상만 해도 끔찍했습니다.
         따라서 NodeJS로 시리얼 통신의 재접속 및 명령어 Queue Manager들을 만들어 기기에서 이 명령어를 제대로 accept하면 다시 response 체크를 하는 등의 디테일한 기능들을 추가했었습니다.
       </pre>
-    </details>
-    <p >
-    </p>
-    <hr/>
-    <p>  </p>
-    <h2>갤럭시 워치 S3 프로토타이핑</h2>
-    <p>갤럭시 워치의 신형 모델 목업 하드웨어와 데모 앱을 제작하여 사용성을 체크 및 제품화 컨펌을 위한 프로토타이핑</p>
-    <p ><strong>수행 업무</strong></p>
-    <div class="indented">
-      <ul class="bulleted-list">
-        <li>하드웨어 제어를 위한 Arduino 개발</li>
-        <li>차세대 시계 UX의 전체 시나리오에 해당하는 데모앱 개발</li>
-      </ul>
-    </div>
-    <p >
-    </p>
-    <div style="width:50%" class="column"><iframe width="640" height="360"
-      src="https://www.youtube.com/embed/5YS6Y5sgfTE" frameborder="0"></iframe></div>
-    <p ></p>
-    <div style="width:50%" class="column"><iframe width="640" height="360"
-      src="https://www.youtube.com/embed/RxcoN3ETkL8" frameborder="0"></iframe></div>
-    <p >
-    </p>
-    <p >
-    </p>
-    <div class="page-break"></div>
-    <h2 class="section-title block-color-teal_background">개인 프로젝트</h2>
-    <h2>NCS 기출문제</h2>
-    <p>NCS 수학 문제를 자동으로 생성하여 정답, 풀이등을 제공하는 앱</p>
-    <p >Android ⭐3.83 (Download 13K) iOS ⭐4.5 (Download 7K)</p>
-    <p ><strong>개발 의도</strong></p>
+      </details>
+      <p>
+      </p>
+      <hr />
+      <p> </p>
+      <div class="page-preserve">
+        <h2>갤럭시 워치 S3 프로토타이핑</h2>
+        <p>갤럭시 워치의 신형 모델 목업 하드웨어와 데모 앱을 제작하여 사용성을 체크 및 제품화 컨펌을 위한 프로토타이핑</p>
+        <p><strong>수행 업무</strong></p>
+        <div class="indented">
+          <ul class="bulleted-list">
+            <li>하드웨어 제어를 위한 Arduino 개발</li>
+            <li>차세대 시계 UX의 전체 시나리오에 해당하는 데모앱 개발</li>
+          </ul>
+        </div>
+        <p>
+        </p>
+        <div style="width:50%" class="column"><iframe width="640" height="360"
+            src="https://www.youtube.com/embed/5YS6Y5sgfTE" frameborder="0"></iframe></div>
+        <p></p>
+        <div style="width:50%" class="column"><iframe width="640" height="360"
+            src="https://www.youtube.com/embed/RxcoN3ETkL8" frameborder="0"></iframe></div>
+      </div>
+      <p>
+      </p>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background">개인 프로젝트</h2>
+      <h2>NCS 기출문제</h2>
+      <p>NCS 수학 문제를 자동으로 생성하여 정답, 풀이등을 제공하는 앱</p>
+      <p>Android ⭐3.83 (Download 13K) iOS ⭐4.5 (Download 7K)</p>
+      <p><strong>개발 의도</strong></p>
       <div class="indented">
         <ul class="bulleted-list">
           <li>NCS 수학 문제집을 보면서 연습할 수 있는 예제의 양이 부족하다고 생각하여, 수학 문제를 자동으로 만들어주는 앱을 개발해보고 싶었음</li>
@@ -1316,122 +1375,134 @@
           <li>수학 문제 자동 생성을 위해 수학 문제집들을 분석하여 문제와 정답지, 보기 등을 템플릿화하고, 이를 서버에서 관리하여 문제에 에러가 있을 경우 빠르게 배포</li>
         </ul>
       </div>
-      
-    <div class="column-list">
-      <div style="width:33.33333333333333%" class="column">
-        <figure class="image"><a href="assets/image_8.png"><img style="width:1242px" src="assets/image_8.png" /></a>
-        </figure>
+
+      <div class="column-list">
+        <div style="width:33.33333333333333%" class="column">
+          <figure class="image"><a href="assets/image_8.png"><img style="width:1242px" src="assets/image_8.png" /></a>
+          </figure>
+        </div>
+        <div style="width:33.333333333333336%" class="column">
+          <figure class="image"><a href="assets/image_9.png"><img style="width:1242px" src="assets/image_9.png" /></a>
+          </figure>
+        </div>
+        <div style="width:33.333333333333336%" class="column">
+          <figure class="image"><a href="assets/image_10.png"><img style="width:1242px" src="assets/image_10.png" /></a>
+          </figure>
+          <p>
+          </p>
+        </div>
       </div>
-      <div style="width:33.333333333333336%" class="column">
-        <figure class="image"><a href="assets/image_9.png"><img style="width:1242px" src="assets/image_9.png" /></a>
-        </figure>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">Other Experience</h1>
+      <p>
+      </p>
+      <h2>멘토링</h2>
+      <p>광주 창조경제 혁신센터 오픈랩 IoT 멘토 (2015년 ~ 2017년)</p>
+      <ul class="bulleted-list">
+        <li>개발 입문자들을 대상으로 여러가지 IoT 메이커 활동에 필요한 아이디어 구상 및 실제 H/W 및 S/W 개발을 할 수 있도록 강의 및 멘토링 진행</li>
+        <li>그 외 다양한 해커톤에서 개발 서포터</li>
+      </ul>
+      <figure class="image"><a href="assets/image_11.png"><img style="width:720px" src="assets/image_11.png" /></a>
+      </figure>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">수상경력</h1>
+      <h2>갤럭시 기어 해커톤 2014 우수상</h2>
+      <h3>삼성전자 2014-05-28</h3>
+      <ul class="bulleted-list">
+        <li>손목 움직임 인식과 갤럭시 워치 자이로를 매칭하여 가리킨 물건의 정보를 워치에 표시해주는 아이디어</li>
+        <li>갤럭시 워치 webapp 개발</li>
+        <li>동작인식 시스템과 연동 샘플 개발</li>
+      </ul>
+      <figure><a href="http://bit.ly/2Onjwra" class="bookmark source">
+          <div class="bookmark-info">
+            <div class="bookmark-text">
+              <div class="bookmark-title">도심 속 한바탕 축제를 열다, 삼성 기어 해커톤 2014 현장</div>
+              <div class="bookmark-description">파릇한 잔디, 음식이 가득한 스낵카, 따스한 담요, 그리고 흥겨운 음악이 흐릅니다. 사람들은 편안한 옷차림으로 거닐고 옹기종기
+                모여 앉아 대화를 나누기도 하는데요. 여기저기 웃음소리가 끊이질 않습니다. &#x27;혹시 봄 소풍이라도 다녀왔나요?&#x27;라고 지레짐작한 분도 있을 것 같은데요. 이곳은 바로
+                애플리케이션 개발 경진대회가 열린 &#x27;삼성 기어 해커톤 2014&#x27; 현장 풍경이랍니다.</div>
+            </div>
+            <div class="bookmark-href"><img src="https://news.samsung.com/kr/favicon.ico"
+                class="icon bookmark-icon" />http://bit.ly/2Onjwra</div>
+          </div><img
+            src="https://img.kr.news.samsung.com/kr/wp-content/uploads/2014/05/%EC%B5%9C%EC%83%81%EB%8B%A811.jpg"
+            class="bookmark-image" />
+        </a></figure>
+
+      <p>
+      </p>
+      <hr>
+      </p>
+      <div class="page-preserve">
+        <h2>드림엔터 IoT 해커톤 2014 장려상</h2>
+        <h3>미래창조과학부 2014-12-21</h3>
+        <ul class="bulleted-list">
+          <li>연인 간 커플링에 IoT를 적용해보는 아이디어</li>
+          <li>피에조와 LED, Bluetooth 모듈을 활용하여 최대한 심플한 하드웨어 개발</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/9tIt-RUGWj4" frameborder="0"></iframe>
+        <p></p>
+        <hr>
       </div>
-      <div style="width:33.333333333333336%" class="column">
-        <figure class="image"><a href="assets/image_10.png"><img style="width:1242px" src="assets/image_10.png" /></a>
-        </figure>
-        <p >
+      <div class="page-preserve">
+        <h2>한글 창의 공모전 2015 장려상</h2>
+        <h3>문화체육관광부 2015-10-08</h3>
+        <ul class="bulleted-list">
+          <li>한글의 특징을 살린 한글 학습용 AR 앱</li>
+          <li>자/모음 블럭을 조합하여 AR에 비추면 그와 관련된 동물 등이 블럭 위에 보이고, 글씨를 따라 써볼 수 있는 등 기능 제공</li>
+          <li><strong>Unity3D</strong>와 <strong>Vuforia</strong>를 활용하여 개발</li>
+          <li>자, 모음, 받침 조합에 대한 알고리즘 개발 (ㄱ 과 ㄴ, ㅏ ㅓ ㅗ ㅜ 등)</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/Ur87EKXVENo" frameborder="0"></iframe>
+        <p></p>
+        <hr>
+      </div>
+      <div class="page-preserve">
+        <h2>한중일 패션 웨어러블 해커톤 최우수 미래부장관상 </h2>
+        <h3>미래창조과학부 2015-11-29</h3>
+        <ul class="bulleted-list">
+          <li>중국인 디자이너, 기획자와 함께 프로젝트 진행</li>
+          <li>쉽게 싫증 낼 수 있는 아이들의 캐릭터 의류를 LED모듈로 교체하여 부모가 언제든지 아이 의류의 캐릭터를 바꿀 수 있도록 커스텀한 이미지를 샘플링을 통해 LED Pixel에 나타나도록 개발
+          <li>미아방지를 위해 부모와 일정 거리 이상 떨어 졌을 시 경고음을 발산하는 기능 개발</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/9yTAmCqbXtA" frameborder="0"></iframe>
+        <p>
         </p>
       </div>
-    </div>
-    <div class="page-break"></div>
-    <h1 class="section-title block-color-yellow_background">Other Experience</h1>
-    <p >
-    </p>
-    <h2 >멘토링</h2>
-    <p >광주 창조경제 혁신센터 오픈랩 IoT 멘토 (2015년 ~ 2017년)</p>
-    <ul class="bulleted-list">
-      <li>개발 입문자들을 대상으로 여러가지 IoT 메이커 활동에 필요한 아이디어 구상 및 실제 H/W 및 S/W 개발을 할 수 있도록 강의 및 멘토링 진행</li>
-      <li>그 외 다양한 해커톤에서 개발 서포터</li>
-    </ul>
-    <div class="column-list">
-      <div style="width:75%" class="column">
-      </div>
-    </div>
-    <figure class="image"><a href="assets/image_11.png"><img style="width:720px" src="assets/image_11.png" /></a>
-    </figure>
-    <p >
-    </p>
-    <div class="page-break"></div>
-    <h1 class="section-title block-color-yellow_background">수상경력</h1>
-    <h2 >갤럭시 기어 해커톤 2014 우수상</h2>
-    <h3>삼성전자 2014-05-28</h3>
-    <ul class="bulleted-list">
-      <li>손목 움직임 인식과 갤럭시 워치 자이로를 매칭하여 가리킨 물건의 정보를 워치에 표시해주는 아이디어</li>
-      <li>갤럭시 워치 webapp 개발</li>
-      <li>동작인식 시스템과 연동 샘플 개발</li>
-    </ul>
-    <figure><a href="http://bit.ly/2Onjwra" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">도심 속 한바탕 축제를 열다, 삼성 기어 해커톤 2014 현장</div><div class="bookmark-description">파릇한 잔디, 음식이 가득한 스낵카, 따스한 담요, 그리고 흥겨운 음악이 흐릅니다. 사람들은 편안한 옷차림으로 거닐고 옹기종기 모여 앉아 대화를 나누기도 하는데요. 여기저기 웃음소리가 끊이질 않습니다. &#x27;혹시 봄 소풍이라도 다녀왔나요?&#x27;라고 지레짐작한 분도 있을 것 같은데요. 이곳은 바로 애플리케이션 개발 경진대회가 열린 &#x27;삼성 기어 해커톤 2014&#x27; 현장 풍경이랍니다.</div></div><div class="bookmark-href"><img src="https://news.samsung.com/kr/favicon.ico" class="icon bookmark-icon"/>http://bit.ly/2Onjwra</div></div><img src="https://img.kr.news.samsung.com/kr/wp-content/uploads/2014/05/%EC%B5%9C%EC%83%81%EB%8B%A811.jpg" class="bookmark-image"/></a></figure>
-    
-    <p >
-    </p>
-    <hr >
-    </p>
-    <h2 >드림엔터 IoT 해커톤 2014 장려상</h2>
-    <h3>미래창조과학부 2014-12-21</h3>
-    <ul class="bulleted-list">
-      <li>연인 간 커플링에 IoT를 적용해보는 아이디어</li>
-      <li>피에조와 LED, Bluetooth 모듈을 활용하여 최대한 심플한 하드웨어 개발</li>
-    </ul>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/9tIt-RUGWj4" frameborder="0"></iframe>
-    <p >
-    </p>
-    <hr >
-    </p>
-    <h2>한글 창의 공모전 2015 장려상</h2>
-    <h3>문화체육관광부 2015-10-08</h3>
-    <ul class="bulleted-list">
-      <li>한글의 특징을 살린 한글 학습용 AR 앱</li>
-      <li>자/모음 블럭을 조합하여 AR에 비추면 그와 관련된 동물 등이 블럭 위에 보이고, 글씨를 따라 써볼 수 있는 등 기능 제공</li>
-      <li><strong>Unity3D</strong>와 <strong>Vuforia</strong>를 활용하여 개발</li>
-      <li>자, 모음, 받침 조합에 대한 알고리즘 개발 (ㄱ 과 ㄴ, ㅏ ㅓ ㅗ ㅜ 등)</li>
-    </ul>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/Ur87EKXVENo" frameborder="0"></iframe>
-    <p >
-    </p>
-    <hr >
-    </p>
-    <h2>한중일 패션 웨어러블 해커톤 최우수 미래부장관상 </h2>
-    <h3>미래창조과학부 2015-11-29</h3>
-    <ul class="bulleted-list">
-      <li>중국인 디자이너, 기획자와 함께 프로젝트 진행</li>
-      <li>쉽게 싫증 낼 수 있는 아이들의 캐릭터 의류를 LED모듈로 교체하여 부모가 언제든지 아이 의류의 캐릭터를 바꿀 수 있도록 커스텀한 이미지를 샘플링을 통해 LED Pixel에 나타나도록 개발
-      <li>미아방지를 위해 부모와 일정 거리 이상 떨어 졌을 시 경고음을 발산하는 기능 개발</li>
-    </ul>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/9yTAmCqbXtA" frameborder="0"></iframe>
-    <p >
-    </p>
-    <div class="page-break"></div>
-    <h1 class="section-title block-color-yellow_background">학력 사항</h1>
-    <h3 >숭실대 글로벌 미디어 학부 졸업</h3>
-    <p >2009년 3월 ~ 2013년 8월 (편입)</p>
-    <p >학점 4.09/4.50</p>
-    <ul class="bulleted-list">
-      <li>DB, 컴퓨터 그래픽스, 멀티미디어 및 IT 비지니스 관련 수업 이수</li>
-    </ul>
-    <ul class="bulleted-list">
-      <li>졸업 작품 - 헤드트래킹을 활용한 VR 디스플레이와 이를 활용한 게임 개발(Unity3D, MS Kinect)</li>
-    </ul>
-    <hr>
-    <h3>숭실대 전산원 멀티미디어학부 졸업</h3>
-    <p >2007년 3월 ~ 2009년 2월</p>
-    <p >학점 4.30/4.50</p>
-    <hr/>
-    <h3 >광명고등학교(경기) 졸업</h3>
-    <p >2004년 3월 ~ 2009년 2월</p>
-    <p >
-    </p>
-    <h1 class="section-title block-color-yellow_background">자격증</h1>
-    <h3 >정보처리 기사</h3>
-    <p >한국산업인력공단 2013년 5월 31일</p>
-    <h3 >멀티미디어 콘텐츠 제작 전문가</h3>
-    <p >한국산업인력공단 2008년 6월 2일</p>
-    <p ></p>
-    <h3 >한국사 능력 검정 1급 </h3>
-    <p >국사편찬위원회 2018년 8월 11일</p>
-    <p >
-    </p>
-    <p >
-    </p>
+
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">학력 사항</h1>
+      <h3>숭실대 글로벌 미디어 학부 졸업</h3>
+      <p>2009년 3월 ~ 2013년 8월 (편입)</p>
+      <p>학점 4.09/4.50</p>
+      <ul class="bulleted-list">
+        <li>DB, 컴퓨터 그래픽스, 멀티미디어 및 IT 비지니스 관련 수업 이수</li>
+      </ul>
+      <ul class="bulleted-list">
+        <li>졸업 작품 - 헤드트래킹을 활용한 VR 디스플레이와 이를 활용한 게임 개발(Unity3D, MS Kinect)</li>
+      </ul>
+      <hr>
+      <h3>숭실대 전산원 멀티미디어학부 졸업</h3>
+      <p>2007년 3월 ~ 2009년 2월</p>
+      <p>학점 4.30/4.50</p>
+      <hr />
+      <h3>광명고등학교(경기) 졸업</h3>
+      <p>2004년 3월 ~ 2009년 2월</p>
+      <p>
+      </p>
+      <h1 class="section-title block-color-yellow_background">자격증</h1>
+      <h3>정보처리 기사</h3>
+      <p>한국산업인력공단 2013년 5월 31일</p>
+      <h3>멀티미디어 콘텐츠 제작 전문가</h3>
+      <p>한국산업인력공단 2008년 6월 2일</p>
+      <p></p>
+      <h3>한국사 능력 검정 1급 </h3>
+      <p>국사편찬위원회 2018년 8월 11일</p>
+      <p>
+      </p>
+      <p>
+      </p>
     </div>
   </article>
 
