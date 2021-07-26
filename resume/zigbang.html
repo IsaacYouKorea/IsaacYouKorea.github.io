@@ -1,0 +1,1519 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>유영준 | Front-end Developer</title>
+  <style>
+    /* webkit printing magic: print all background colors */
+    html {
+      -webkit-print-color-adjust: exact;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media only screen {
+      body {
+        margin: 2em auto;
+        max-width: 900px;
+        color: rgb(55, 53, 47);
+      }
+    }
+
+    body {
+      line-height: 2;
+      /* white-space: pre-wrap; */
+    }
+
+    a,
+    a.visited {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .pdf-relative-link-path {
+      font-size: 80%;
+      color: #444;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.75em;
+    }
+
+    h1 {
+      font-size: 1.875rem;
+      margin-top: 1.875rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .source {
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 1.5em;
+      word-break: break-all;
+    }
+
+    .callout {
+      border-radius: 3px;
+      padding: 1rem;
+    }
+
+    figure {
+      margin: 1.25em 0;
+      page-break-inside: avoid;
+    }
+
+    figcaption {
+      opacity: 0.5;
+      font-size: 85%;
+      margin-top: 0.5em;
+    }
+
+    mark {
+      background-color: transparent;
+    }
+
+    .indented {
+      padding-left: 1.5em;
+    }
+
+    hr {
+      background: transparent;
+      display: block;
+      width: 100%;
+      height: 1px;
+      visibility: visible;
+      border: none;
+      border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    @media only print {
+      img {
+        max-height: 100vh;
+        object-fit: contain;
+      }
+    }
+
+    @page {
+      margin: 1in;
+    }
+
+    .collection-content {
+      font-size: 0.875rem;
+    }
+
+    .column-list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .column {
+      padding: 0 1em;
+    }
+
+    .column:first-child {
+      padding-left: 0;
+      
+    }
+
+    .column:last-child {
+      padding-right: 0;
+    }
+
+    .table_of_contents-item {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 1.3;
+      padding: 0.125rem;
+    }
+
+    .table_of_contents-indent-1 {
+      margin-left: 1.5rem;
+    }
+
+    .table_of_contents-indent-2 {
+      margin-left: 3rem;
+    }
+
+    .table_of_contents-indent-3 {
+      margin-left: 4.5rem;
+    }
+
+    .table_of_contents-link {
+      text-decoration: none;
+      opacity: 0.7;
+      border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid rgba(55, 53, 47, 0.09);
+      border-collapse: collapse;
+    }
+
+    table {
+      border-left: none;
+      border-right: none;
+    }
+
+    th,
+    td {
+      font-weight: normal;
+      padding: 0.25em 0.5em;
+      line-height: 1.5;
+      min-height: 1.5em;
+      text-align: left;
+    }
+
+    th {
+      color: rgba(55, 53, 47, 0.6);
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      margin-block-start: 0.6em;
+      margin-block-end: 0.6em;
+    }
+
+    li>ol:first-child,
+    li>ul:first-child {
+      margin-block-start: 0.6em;
+    }
+
+    ul>li {
+      list-style: disc;
+    }
+
+    ul.to-do-list {
+      text-indent: -1.7em;
+    }
+
+    ul.to-do-list>li {
+      list-style: none;
+    }
+
+    .to-do-children-checked {
+      text-decoration: line-through;
+      opacity: 0.375;
+    }
+
+    ul.toggle>li {
+      list-style: none;
+    }
+
+    ul {
+      padding-inline-start: 1.7em;
+    }
+
+    ul>li {
+      padding-left: 0.1em;
+    }
+
+    ol {
+      padding-inline-start: 1.6em;
+    }
+
+    ol>li {
+      padding-left: 0.2em;
+    }
+
+    .mono ol {
+      padding-inline-start: 2em;
+    }
+
+    .mono ol>li {
+      text-indent: -0.4em;
+    }
+
+    .toggle {
+      padding-inline-start: 0em;
+      list-style-type: none;
+    }
+
+    /* Indent toggle children */
+    .toggle>li>details {
+      padding-left: 1.7em;
+    }
+
+    .toggle>li>details>summary {
+      margin-left: -1.1em;
+    }
+
+    .selected-value {
+      display: inline-block;
+      padding: 0 0.5em;
+      background: rgba(206, 205, 202, 0.5);
+      border-radius: 3px;
+      margin-right: 0.5em;
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
+      white-space: nowrap;
+    }
+
+    .collection-title {
+      display: inline-block;
+      margin-right: 1em;
+    }
+
+    time {
+      opacity: 0.5;
+    }
+
+    .icon {
+      display: inline-block;
+      max-width: 1.2em;
+      max-height: 1.2em;
+      text-decoration: none;
+      vertical-align: text-bottom;
+      margin-right: 0.5em;
+    }
+
+    img.icon {
+      border-radius: 3px;
+    }
+
+    .user-icon {
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 100%;
+      margin-right: 0.5rem;
+    }
+
+    .user-icon-inner {
+      font-size: 0.8em;
+    }
+
+    .text-icon {
+      border: 1px solid #000;
+      text-align: center;
+    }
+
+    .page-cover-image {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 30vh;
+    }
+
+    .page-header-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .page-header-icon-with-cover {
+      margin-top: -0.72em;
+      margin-left: 0.07em;
+    }
+
+    .page-header-icon img {
+      border-radius: 3px;
+    }
+
+    .link-to-page {
+      margin: 1em 0;
+      padding: 0;
+      border: none;
+      font-weight: 500;
+    }
+
+    p>.user {
+      opacity: 0.5;
+    }
+
+    td>.user,
+    td>time {
+      white-space: nowrap;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.5);
+      margin-right: 0.6em;
+      vertical-align: middle;
+    }
+
+    p {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .image {
+      border: none;
+      margin: 1.5em 0;
+      padding: 0;
+      border-radius: 0;
+      text-align: center;
+    }
+
+    .code,
+    code {
+      background: rgba(135, 131, 120, 0.15);
+      border-radius: 3px;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 85%;
+      tab-size: 2;
+    }
+
+    code {
+      color: #eb5757;
+    }
+
+    .code {
+      padding: 1.5em 1em;
+    }
+
+    .code-wrap {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .code>code {
+      background: none;
+      padding: 0;
+      font-size: 100%;
+      color: inherit;
+    }
+
+    blockquote {
+      font-size: 1.25em;
+      margin: 1em 0;
+      padding-left: 1em;
+      border-left: 3px solid rgb(55, 53, 47);
+    }
+
+    .bookmark {
+      text-decoration: none;
+      max-height: 8em;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .bookmark-title {
+      font-size: 0.85em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 1.75em;
+      white-space: nowrap;
+    }
+
+    .bookmark-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bookmark-info {
+      flex: 4 1 180px;
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bookmark-image {
+      width: 33%;
+      flex: 1 1 180px;
+      display: block;
+      position: relative;
+      object-fit: cover;
+      border-radius: 1px;
+    }
+
+    .bookmark-description {
+      color: rgba(55, 53, 47, 0.6);
+      font-size: 0.75em;
+      overflow: hidden;
+      max-height: 4.5em;
+      word-break: break-word;
+    }
+
+    .bookmark-href {
+      font-size: 0.75em;
+      margin-top: 0.25em;
+    }
+
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    .serif {
+      font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif;
+    }
+
+    .mono {
+      font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+    }
+
+    .pdf .sans {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
+    }
+
+    .pdf .code {
+      font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
+    }
+
+    .pdf .serif {
+      font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
+    }
+
+    .pdf .mono {
+      font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
+    }
+
+    .highlight-default {}
+
+    .highlight-gray {
+      color: rgb(155, 154, 151);
+    }
+
+    .highlight-brown {
+      color: rgb(100, 71, 58);
+    }
+
+    .highlight-orange {
+      color: rgb(217, 115, 13);
+    }
+
+    .highlight-yellow {
+      color: rgb(223, 171, 1);
+    }
+
+    .highlight-teal {
+      color: rgb(15, 123, 108);
+    }
+
+    .highlight-blue {
+      color: rgb(11, 110, 153);
+    }
+
+    .highlight-purple {
+      color: rgb(105, 64, 165);
+    }
+
+    .highlight-pink {
+      color: rgb(173, 26, 114);
+    }
+
+    .highlight-red {
+      color: rgb(224, 62, 62);
+    }
+
+    .highlight-gray_background {
+      background: rgb(235, 236, 237);
+    }
+
+    .highlight-brown_background {
+      background: rgb(233, 229, 227);
+    }
+
+    .highlight-orange_background {
+      background: rgb(250, 235, 221);
+    }
+
+    .highlight-yellow_background {
+      background: rgb(251, 243, 219);
+    }
+
+    .highlight-teal_background {
+      background: rgb(221, 237, 234);
+    }
+
+    .highlight-blue_background {
+      background: rgb(221, 235, 241);
+    }
+
+    .highlight-purple_background {
+      background: rgb(234, 228, 242);
+    }
+
+    .highlight-pink_background {
+      background: rgb(244, 223, 235);
+    }
+
+    .highlight-red_background {
+      background: rgb(251, 228, 228);
+    }
+
+    .block-color-default {
+      color: inherit;
+      fill: inherit;
+    }
+
+    .block-color-gray {
+      color: rgba(55, 53, 47, 0.6);
+      fill: rgba(55, 53, 47, 0.6);
+    }
+
+    .block-color-brown {
+      color: rgb(100, 71, 58);
+      fill: rgb(100, 71, 58);
+    }
+
+    .block-color-orange {
+      color: rgb(217, 115, 13);
+      fill: rgb(217, 115, 13);
+    }
+
+    .block-color-yellow {
+      color: rgb(223, 171, 1);
+      fill: rgb(223, 171, 1);
+    }
+
+    .block-color-teal {
+      color: rgb(15, 123, 108);
+      fill: rgb(15, 123, 108);
+    }
+
+    .block-color-blue {
+      color: rgb(11, 110, 153);
+      fill: rgb(11, 110, 153);
+    }
+
+    .block-color-purple {
+      color: rgb(105, 64, 165);
+      fill: rgb(105, 64, 165);
+    }
+
+    .block-color-pink {
+      color: rgb(173, 26, 114);
+      fill: rgb(173, 26, 114);
+    }
+
+    .block-color-red {
+      color: rgb(224, 62, 62);
+      fill: rgb(224, 62, 62);
+    }
+
+    .block-color-gray_background {
+      background: rgb(235, 236, 237);
+    }
+
+    .block-color-brown_background {
+      background: rgb(233, 229, 227);
+    }
+
+    .block-color-orange_background {
+      background: rgb(250, 235, 221);
+    }
+
+    .block-color-yellow_background {
+      background: rgb(251, 243, 219);
+    }
+
+    .block-color-teal_background {
+      background: rgb(221, 237, 234);
+    }
+
+    .block-color-blue_background {
+      background: rgb(221, 235, 241);
+    }
+
+    .block-color-purple_background {
+      background: rgb(234, 228, 242);
+    }
+
+    .block-color-pink_background {
+      background: rgb(244, 223, 235);
+    }
+
+    .block-color-red_background {
+      background: rgb(251, 228, 228);
+    }
+
+    .select-value-color-default {
+      background-color: rgba(206, 205, 202, 0.5);
+    }
+
+    .select-value-color-gray {
+      background-color: rgba(155, 154, 151, 0.4);
+    }
+
+    .select-value-color-brown {
+      background-color: rgba(140, 46, 0, 0.2);
+    }
+
+    .select-value-color-orange {
+      background-color: rgba(245, 93, 0, 0.2);
+    }
+
+    .select-value-color-yellow {
+      background-color: rgba(233, 168, 0, 0.2);
+    }
+
+    .select-value-color-green {
+      background-color: rgba(0, 135, 107, 0.2);
+    }
+
+    .select-value-color-blue {
+      background-color: rgba(0, 120, 223, 0.2);
+    }
+
+    .select-value-color-purple {
+      background-color: rgba(103, 36, 222, 0.2);
+    }
+
+    .select-value-color-pink {
+      background-color: rgba(221, 0, 129, 0.2);
+    }
+
+    .select-value-color-red {
+      background-color: rgba(255, 0, 26, 0.2);
+    }
+
+    .checkbox {
+      display: inline-flex;
+      vertical-align: text-bottom;
+      width: 16;
+      height: 16;
+      background-size: 16px;
+      margin-left: 2px;
+      margin-right: 5px;
+    }
+
+    .checkbox-on {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+    .checkbox-off {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+
+    .project-section {
+      margin: 2rem 0rem;
+    }
+
+    .section-title {
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+
+    li {
+      font-size: 1.1rem;
+    }
+
+    hr {
+      margin: 3rem 0rem;
+    }
+
+    pre {
+      white-space: pre-line;
+      font-family: auto;
+    }
+
+    @media print {
+      .page-break {
+        page-break-before: always;
+      }
+
+      .page-preserve {
+        page-break-inside: avoid;
+      }
+
+      iframe {
+        display: none;
+      }
+
+      .section-title {
+        margin-top: 0rem;
+      }
+
+      .page-cover-image {
+        height: 20vh;
+      }
+
+      hr {
+        margin: 1rem 0rem;
+      }
+
+      .print-display-none {
+        display: none;
+      }
+
+      details {
+        display: none;
+      }
+    }
+
+
+    @media only screen and (max-width: 480px) {
+      .column-list {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <article class="page sans">
+    <header>
+      <img class="page-cover-image"
+        src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"
+        style="object-position:center 50%" />
+      <div class="page-header-icon page-header-icon-with-cover"><span class="icon">👨🏻‍💻</span></div>
+      <h1 class="page-title">유영준</h1>
+    </header>
+    <div class="page-body">
+      <h3>사용자들에게 최고의 경험을 드리기 위해 다양한 디바이스 및 플랫폼과 웹 기술들을 연구합니다.</h3>
+      <h2>Contact.</h2>
+      <p>Email <strong>isaac_you@naver.com</strong></p>
+      <p>Phone +<strong>82 10-9355-9686</strong></p>
+      <h2>Channel</h2>
+      <p>Github <a href="https://github.com/isaacyoukorea">https://github.com/isaacyoukorea</a></p>
+      <h1 class="section-title block-color-yellow_background">직방 - IoT 서비스 개발자(시니어) </h1>
+      <h3>IoT 관련 서비스에 도전해보고 싶습니다.</h3>
+      <p>공간과 사람, 그리고 그걸 이어주는 IT 기술에 관심이 많고, 사람들이 해당 공간을 더 잘 사용할 수 있도록 하는 서비스를 만들어보고 싶습니다.</p>
+      <p>저는 사용자와 직접 맞닿아 있는 프론트엔드 그 중에서도 TV나 미디어와 관련된 웹 서비스들을 개발했고, 차트나 CMS 사이트도 다수 개발하였습니다.</p>
+      <p>저의 가장 큰 장점은 확장성이라고 생각합니다. 고객과 사용자들에게 최고의 결과물을 내기 위해서 필요한 기술을 연습하고 습득하기를 주저하지 않았고, 프로젝트마다 새로운 도전 과제를 설정하며 개발을 하고 있습니다.</p>
+      <p>백엔드 관련 경험이 상대적으로 적어서 찾으시는 인재상에 맞지 않을수도 있으나, 필요한 기술들은 적극적으로 배워서 적용해 나가겠습니다.</p>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">Skills</h1>
+      <h3>Web</h3>
+      <p>숙달됨 - 클라이언트, 사용자에게 배포되는 프로젝트에서 여러차례 사용해봄</p>
+      <p>
+        Javascript, Typescript, Vuejs, Vuex, SCSS, Webpack, Prerender, HTML, PUG, Docker, Tizen, WebOS, Canvas,
+        p5.js, TweenMax, D3, Swiper</p>
+      <p>훈련중 - 사내 프로젝트에서 사용해보거나, 배포 프로젝트에서 한 번정도 사용해 본 경험이 있음</p>
+      <p>ReactJS, Redux, NextJS, NuxtJS, GraphQL, WebWorker, WebGL</p>
+      <p></p>
+      <h3>Mobile Application</h3>
+      <p>Flutter, Android</p>
+      <h3>ETC</h3>
+      <p>C++, Python3</p>
+      <h3><strong>Backend</strong></h3>
+      <p>AWS, Firebase</p>
+      <h3>Hardware</h3>
+      <p>Arduino</p>
+      <h3>3D 그래픽스</h3>
+      <p>Unity3D(C#), Vuforia (AR)</p>
+      <h3>협업도구</h3>
+      <p>Git, Jira, Confluence, Zeplin</p>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">경력 사항</h1>
+      <h2>핸드스튜디오</h2>
+      <div class="column-list">
+        <div style="width:25%" class="column">
+          <p>웹개발팀<br>책임 연구원<br>
+            2016년 7월 ~ 현재<br>
+            (<span class="year"></span>년 <span class="month"></span>개월)
+          </p>
+          <p>
+          </p>
+        </div>
+        <div style="width:75%" class="column">
+          <ul class="bulleted-list">
+            <li>삼성, 하이브(빅히트), 카카오, NC 다이노스 등 다양한 글로벌 기업과 함께 다수의 서비스 프로젝트 개발</li>
+            <li>웹이 동작되는 PC, 모바일, TV, 냉장고 등 다양한 플랫폼과 다양한 성능의 기기에서 개발</li>
+            <li>제품화에 성공한 더 세로 TV와 갤럭시 워치 HW 프로토타이핑 개발</li>
+            <li>좋은 퍼포먼스의 웹 애니메이션 개발</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+      </p>
+      <hr>
+      </p>
+      <h2>브이터치 (스타트업)</h2>
+      <div class="column-list">
+        <div style="width:25%" class="column">
+          <p>SW Engineering 팀<br>연구원<br>
+            2013년 5월
+            ~ 2015년 6월<br>
+            (2년 1개월)</p>
+          <p>
+          </p>
+        </div>
+        <div style="width:75%" class="column">
+          <ul class="bulleted-list">
+            <li>손가락의 움직임과 눈 위치를 인식하여 사용자의 의도대로 사물을 제어하는 방식을 연구</li>
+            <li>유저가 가리키는 사물 파악 방식과 액션을 배치할 수 있는 웹 시스템 개발</li>
+            <li>조명 / TV / 그외 기타 Arduino와 연결된 사물들을 제어할 수 있는 웹 시스템 개발</li>
+            <li>시제품 개발 및 설치 (롯데시네마, 상암 디지털 파빌리온, 광고문화회관 등)</li>
+            <li>모바일과 동작인식 매칭 시스템 관련 특허 등록 (출원번호 1020140062668)</li>
+          </ul>
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/2K7EiolkK3Y" frameborder="0"></iframe>
+        </div>
+      </div>
+      <hr>
+      <h2>삼성 SDS</h2>
+      <div class="column-list">
+        <div style="width:25%" class="column">
+          <p>SW Engineering 팀<br />인턴<br>
+            2012년 6월
+            ~ 2012년 8월<br>(2개월)</p>
+        </div>
+        <div style="width:75%" class="column">
+          <ul class="bulleted-list">
+            <li>흥국화재 차세대 프로젝트 QA</li>
+          </ul>
+          <ul class="bulleted-list">
+            <li>고객/보험상품/손해보상 관리 프로그램의 DB/UI QA</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">프로젝트</h1>
+      <ol class="numbered-list print-display-none" start="1"><a href="#project-webapp">
+          <li>웹앱 - 다양한 디바이스</li>
+        </a></ol>
+      <ol class="numbered-list print-display-none" start="2"><a href="#project-web">
+          <li>웹 - 모바일, PC</li>
+        </a></a></ol>
+      <ol class="numbered-list print-display-none" start="3"><a href="#project-animation">
+          <li>웹 애니메이션과 차트</li>
+        </a></ol>
+      <ol class="numbered-list print-display-none" start="4"><a href="#project-hardware">
+          <li>하드웨어 프로토타이핑</li>
+        </a></ol>
+      <ol class="numbered-list print-display-none" start="5"><a href="#project-personal">
+          <li>개인프로젝트</li>
+        </a></ol>
+      <h2 class="section-title block-color-teal_background project-section" id="project-webapp">웹앱 - 다양한 디바이스</h2>
+      <ul class="bulleted-list">
+        <li>좋은 퍼포먼스를 내기 위한 고민</li>
+      </ul>
+      <ul class="bulleted-list">
+        <li>각 디바이스 별 특징과 UX를 고려한 개발</li>
+      </ul>
+      <p>TV나 냉장고와 같은 저사양의 디바이스들에서 나쁜 퍼포먼스는 많은 유저들을 이탈하게 만드는 중요한 요소가 됩니다. 저는 이러한 디바이스들에서도 사용자들이 자연스럽다고 느낄 수 있는
+        퍼포먼스를 만들기 위해 렌더링 비용과 메모리 사용량등을 개선하였고, 다양한 디바이스에서 제공되는 자체 API들을 통합하여 개발을 더욱 구조화할 수 있도록 하는데 역량을 집중하였습니다. 또한 TV는
+        포인터 기반인 모바일과 터치와는 다른 키-포커스 형태로 동작되기 때문에 이에 대응할 수 있는 레이아웃 시스템을 개발하였습니다.
+      </p>
+      <hr />
+      <h2>위버스 TV</h2>
+      <p>하이브(빅히트)의 서비스 위버스를 TV에서도 시청할 수 있도록 웹앱화</p>
+      <div class="column-list">
+        <div style="width:18.75%" class="column">
+          <p><strong>활용기술</strong></p>
+          <ul class="bulleted-list">
+            <li>VueJS (decorator)</li>
+            <li>Typescript</li>
+            <li>Shaka Player</li>
+            <li>Tizen</li>
+            <li>WebOS</li>
+          </ul>
+        </div>
+        <div style="width:81.25%" class="column">
+          <p>
+          </p>
+          <p><strong>수행 업무</strong></p>
+          <ul class="bulleted-list">
+            <li>개발 총괄 - 구조 설계부터 런칭까지 책임</li>
+            <li>TV Layout 시스템 개발</li>
+            <li>삼성(Tizen OS)와 LG(WebOS) 양 플랫폼에서 사용할 수 있는 공통 모듈 개발</li>
+            <li>구글 스프레드시트를 활용한 다국어 번역 모듈 개발</li>
+            <li>ConnectSDK를 활용하여 모바일에서 이어보기 기능 개발</li>
+            <li>4k DRM 적용된 Dash 영상 플레이어 경험</li>
+          </ul>
+        </div>
+      </div>
+      <p><strong>소개 자료</strong></p>
+      <figure id="5b50d290-fc40-47c8-bb32-e5e1d911ed05"><a href="https://www.yna.co.kr/view/AKR20210109061600003"
+          class="bookmark source">
+          <div class="bookmark-info">
+            <div class="bookmark-text">
+              <div class="bookmark-title">&quot;대화면으로 BTS를&quot;...삼성 스마트TV, 하이브(빅히트)엔터 &#x27;위버스&#x27; 론칭 | 연합뉴스</div>
+              <div class="bookmark-description">(서울=연합뉴스) 김영신 기자 = 삼성전자[005930] 스마트 TV에서 하이브(빅히트)엔터테인먼트가 운영하는 팬 커뮤니티 플랫폼
+                &#x27;위버스&#x27;(Weverse)로 콘텐츠를 이용할 수 있다. 10일 삼성전자에 따르면 전 세계에서 2018년형 이후 삼성 스마트 TV가 지난해 12월 말부터 위버스
+                애플리케이션 서비스를 시작했다. 위버스는 방탄소년단(BTS), 세븐틴, 여자친구 등이 소속한 하이브(빅히트)엔터테인먼트의 자회사 비엔엑스(beNX)가 운영하는 글로벌 팬 커뮤니티 플랫폼이다.
+              </div>
+            </div>
+            <div class="bookmark-href"><img src="https://r.yna.co.kr/www/home_n/v02/img/favicon.ico"
+                class="icon bookmark-icon" />https://www.yna.co.kr/view/AKR20210109061600003</div>
+          </div><img src="https://img0.yna.co.kr/etc/inner/KR/2021/01/09/AKR20210109061600003_01_i_P4.jpg"
+            class="bookmark-image" />
+        </a></figure>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
+          위버스는 아티스트와 팬들의 소통 창구 역할을 하는 하이브(빅히트)의 자체 서비스입니다.
+          BTS로 유명한 하이브(빅히트)의 서비스답게 이미 글로벌하게 많은 사람들에게 사랑받고 있습니다.
+          하지만 이 플랫폼에서 서비스되는 영상을 TV와 같은 큰화면으로 보기 위해서 팬들은 HDMI를 연결해야 하거나 웹페이지를 우회해서 보는 등 불편이 있었고, 하이브(빅히트) 이에 TV 서비스의 개발 필요성을 느끼고 저희에게 제작을 의뢰하였습니다.
+
+          클라이언트가 제시한 핵심 개발 목표는
+          1. 재생 삼성(Web), LG(Web), 안드로이드 TV(Native)에서 동일한 사용성을 가진 앱
+          2. 위버스에서 제공하는 최대 4k drm 영상을 재생, 다양한 언어의 자막 지원
+          3. 모바일 앱에서 클릭을 하면 해당 영상을 TV에서 이어서 재생
+          4. 한국어, 영어, 일본어 지원
+          이렇게 4가지 정도로 볼 수 있었습니다.
+
+          저는 이에 대응하기 위해 이 프로젝트에서 추가적으로 도전하는 목표는 아래와 같았습니다.
+          <b>1. 삼성, LG Device API 공통 모듈 개발</b>
+          저희는 이전까지 삼성 TV를 메인으로 개발을 해왔기 때문에 LG TV에 대한 리스크가 굉장히 크게 다가왔습니다.
+          이를 해결하기 위해 우선 필요한 기능들을 정의하였습니다. 앱 종료, 모바일과 연동 기능, 시스템에서 앱을 런칭시켜주는 기능, 네트워크 감지 등의 기능들을 지원하는지 체크하였습니다. Tizen과 WebOS 둘의 방식은 많이 달랐지만, 공통적으로 지원되는 부분들이 있었습니다.
+          개발 편의성을 위해서 기기 API만 다루는 별도의 모듈로 만들었고, 웹팩 빌드 시 옵션만 바꾸면 삼성, LG앱이 나올 수 있도록 만들었습니다.
+          이를 활용하니 앱 개발 코드에는 플랫폼 의존성이 들어가지 않을 수 있어서 플랫폼 의존성에 따라 발생할 수 있는 문제를 해결할 수 있었습니다.
+
+          <b>2. 언어 지원을 어떻게 하면 편하게 할 것인가?</b>
+          다양한 국가에서 서비스 되는 앱이다보니 추후 언어가 추가될 것까지 감안해야 했습니다.
+          예전 프로젝트에서는 json이나 yaml를 사용해서 관리를 해본 적이 있었는데, 리소스를 관리하는 PM이나 클라이언트가 개발 비전공자일 경우 파일을 통해 직접적으로 수정하는 경우 많은 휴먼 에러들이 발생하는 경우가 많았습니다.
+          그래서 저희는 리소스 키와 언어코드로 이뤄진 구글 스프레드시트를 통해 언어 리소스를 관리하기로 하였고, 이를 GoogleAPI를 통해 자동으로 json으로 컨버팅하여 언어 관리를 하는 방식을 채택하여 언어나 국가 추가에 따라 발생할 수 있는 시간 로스를 많이 절약할 수 있었습니다.
+         
+          <b>3. TV Layout</b>
+          TV는 PC, 모바일과 같은 반응이 필요한 컴포넌트에 직접적으로 접근할 수 있는 포인트 디바이스와는 다르게 한칸씩 포커스를 이용하여 컴포넌트들을 거쳐서 이동이 필요합니다.
+          이로 인해 발생하는 가장 큰 차이는 컴포넌트간의 위치 상관 관계가 사전에 정의되어야 하는 점입니다. 사전이라고 하는 이유는 움직일 때마다 포커스된 Dom의 위치에서 탐색을 하게 되면 좋은 퍼포먼스가 나올 수 없기 때문입니다.
+          사전 정의 방식의 문제는 디자인이 변경되어서 레이아웃이 바뀌어야 할 때 해당 페이지나 컴포넌트들을 다시 정의해야 하는데, 이를 해결하기 위해 Flutter의 레이아웃 시스템에서 영감을 받아 레이아웃 시스템을 만들었습니다.
+          (Row, Column, Grid) * Scroll 으로 큰 줄기를 잡았고, 컴포넌트상 변화가 있을때 포커스 맵을 업데이트 하는 방식으로 사전 정의를 유지하였습니다.
+          
+          <b>4. DRM 4K 영상 재생</b>
+          삼성과 LG를 동시에 재생되면서 DRM 체크와 4K 영상과 자막을 지원하는 지 등을 체크하는 것은 매우 까다로운 작업이었습니다.
+          여러 영상 플레이어들을 비교해보면서 다행히 구글의 Shaka Player이 저희에게는 요구조건에 가장 잘 맞았습니다.
+          다만 삼성 특정 모델에서 서버로부터 받아온 SetCookie를 지원하지 않아서 발생하는 이슈, Tizen 플랫폼에서 4k 영상 지원 유무를 판단할 때 deprecated API를 사용하는 등 이슈가 있어고, 이를 포크를 떠서 저희의 시스템에 맞게 수정하여 해결할 수 있었습니다.
+        </pre>
+      </details>
+      <hr>
+      <div class="page-preserve">
+        <h2>멜론 TV</h2>
+        <p>카카오 멜론의 자사 서비스를 TV에서 사용할 수 있도록 웹앱화</p>
+        <div class="column-list">
+          <div class="column">
+            <p><strong>활용 기술</strong></p>
+            <ul class="bulleted-list">
+              <li>VueJS (decorator)</li>
+              <li>Typescript</li>
+              <li>Tizen</li>
+            </ul>
+          </div>
+          <div class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>TV Bixby를 이용한 음악 검색 서비스 개발</li>
+                <li>삼성 IoT 플랫폼인 SmartThings와 연계한 다기기 환경(Multi Device Environment)에서의 멜론 이어듣기 개발</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      </p>
+      <div class="page-preserve">
+        <h2>스팀링크 TV </h2>
+        <p>게임 배급사 스팀의 게임을 게임 컨트롤러와 미러링으로 TV에서도 즐길 수 있는 앱</p>
+        <div class="column-list">
+          <div style="width:18.75%" class="column">
+            <p><strong>활용 기술</strong></p>
+            <ul class="bulleted-list">
+              <li>Vanila JS</li>
+              <li>Tizen</li>
+            </ul>
+            <p>
+            </p>
+          </div>
+          <div style="width:81.25%" class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>개발 총괄로써 설계부터 런칭까지 책임</li>
+                <li>스팀 연결까지 필요한 모든 과정(PC 검색 및 설정 등) 개발</li>
+                <li>조이스틱 및 별도 게임 컨트롤러 인식 및 제어 기능 개발</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p><strong>소개 자료</strong></p>
+        <figure>
+          <a href="https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html" class="bookmark source">
+            <div class="bookmark-info">
+              <div class="bookmark-text">
+                <div class="bookmark-title">&quot;삼성 스마트 TV로 PC용 게임 즐긴다&quot;...삼성전자, 美 게임사 밸브와 &#x27;스팀링크&#x27; 앱 제공
+                </div>
+                <div class="bookmark-description">삼성전자는 세계 최대 게임 유통 플랫폼 &#x27;스팀(Steam)&#x27;을 개발한 미국 게임회사
+                  &#x27;밸브(Valve)&#x27;와 손잡고 삼성 스마트 TV로 PC용 게임 화면을 즐길 수 있게 스트리밍하는 &#x27;스팀링크(Steam Link)&#x27;
+                  애플리케이션(앱)을 선보였다고 13일 밝혔다. 스팀링크는 스팀이 제공하는 6000여개의 유·무료 PC 게임을 유무선 스트리밍을 통해 TV로 연결해 대(大)화면으로 즐길 수 있게 해주는
+                  서비스다.</div>
+              </div>
+              <div class="bookmark-href"><img src="https://biz.chosun.com/favicon.ico"
+                  class="icon bookmark-icon" />https://biz.chosun.com/site/data/html_dir/2017/08/13/2017081300374.html
+              </div>
+            </div><img src="https://image.chosun.com/sitedata/image/201708/13/2017081300365_0.jpg"
+              class="bookmark-image" />
+          </a>
+        </figure>
+      </div>
+      <p>
+      </p>
+      <hr>
+      </p>
+      <div class="page-preserve">
+        <h2>게임 TV</h2>
+        <p>유튜브, 트위치, 아프리카 TV의 게임 콘텐츠를 큐레이션하여 제공하는 TV앱</p>
+        <div class="column-list">
+          <div style="width:18.75%" class="column">
+            <p><strong>활용 기술</strong></p>
+            <ul class="bulleted-list">
+              <li>AngularJS</li>
+              <li>Coffeescript</li>
+              <li>Jenkins</li>
+              <li>HLS.js </li>
+            </ul>
+          </div>
+          <div style="width:81.25%" class="column">
+            <p><strong>수행 업무</strong></p>
+            <div class="indented">
+              <ul class="bulleted-list">
+                <li>유튜브, 트위치, 아프리카 3개 사에서 각각 제공하는 외부 플레이어를 공통적으로 사용 및 에러 처리할 수 있는 인터페이스 개발</li>
+                <li>HLS(Http Live Streaming) 플레이어 활용하여 m3u8형태의 트위치 영상 재생 및 제어, 에러 처리 등 개발</li>
+                <li>Jenkins 이용하여 player모듈을 Split하여 배포</li>
+                <li>Tizen Notification 기능 활용 실시간 알림 서비스 구현</li>
+                <li>Tizen Background Service를 이용하여 관심팀 일정 받아오기 등 구현</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+      </p>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background" id="project-web">웹 - 모바일, PC</h2>
+      <ul class="bulleted-list">
+        <li>적응형, 반응형 사이트 개발</li>
+        <li>SEO 적용 (Prerender)</li>
+        <li>웹접근성 Level AA</li>
+        <li>다국어 처리 (i18n)</li>
+      </ul>
+      <hr />
+      <h2>삼성전자 냉장고 글로벌 홍보 사이트</h2>
+      <p></p>
+      <div class="column-list">
+        <div style="width:18.75%" class="column">
+          <p><strong>활용 기술</strong></p>
+          <ul class="bulleted-list">
+            <li>VueJS</li>
+            <li>Prerender</li>
+            <li>ARIA</li>
+          </ul>
+        </div>
+        <div style="width:81.15%" class="column">
+          <p><strong>수행업무</strong></p>
+          <ul class="bulleted-list">
+            <li>삼성전자 내에 포함되기 위한 최소 웹접근성 Level AA 기준에 만족하는 웹사이트 제작</li>
+            <li>PC부터 모바일까지 해상도 대응 및 적응형 적용</li>
+            <li>50여개 언어로 번역되어 SEO가 적용될 수 있도록 Prerender 적용</li>
+          </ul>
+          <p>
+          </p>
+        </div>
+      </div>
+      <hr>
+      </p>
+      </p>
+      <h2>StarDevPortal</h2>
+      <p>삼성 사내에서 사용되는 AI 관련 내부 서비스 개발</p>
+      <p><strong>수행 업무 </strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>삼성에서 개발한 자체 AI 10여 종을 직접 파일을 업로드하면서 체험할 수 있는 페이지 개발</li>
+          <li>유저가 업로드한 파일이 각 AI 플랫폼에서 지원하는 파일 형식인지 파일 시그니처로 필터링 기능 개발</li>
+          <li>AI 분석 결과(비디오, 이미지)를 캔버스를 통해 유저가 파악하기 좋은 형태의 UI 개발</li>
+        </ul>
+      </div>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
+          이 프로젝트는 삼성 AI 연구팀들이 각 팀에서 개발한 기능들을 실제로 사용해볼 수 있는 체험 페이지와 소개 등으로 이뤄져 있었습니다.
+          음성인식이나 비디오 내용 유추, 이미지 분석, 도로 분석, 얼굴 분석 등 20여 종의 다양한 API들이 개발되어 있었습니다.
+          다만 문제는 각 팀별로 필요로 하는 입력 파일들의 조건이 꽤 까다로웠습니다. 게다가 연구팀마다 각자의 서버를 운영하여 서버의 형태나 규약들이 모두 달랐고, 서버 지원 여부가 팀마다 달라서 이를 통일할 수도 없는 상황이었습니다.
+          파일이 해당 조건에 맞지 않으면 특정 에러를 내주거나 하면 좋은데, 이를 맞출 수가 없다보니 보내기 전 파일을 입력 받는 과정에서 이를 판단해야 했습니다.
+          예를 들면 음성 wav인데 mono만 된다거나, 그레이스케일의 이미지만 된다거나 하는 식이었기 때문에 저는 이를 해결하기 위해 파일 시그니처를 확인하였습니다.
+          다행히 이를 도와줄 수 있는 라이브러리를 찾았지만 우리가 가진 모든 케이스에서 만족되는건 아니었고, wav와 이미지 분석에서 byteArray를 뒤져가면서 이를 판단할 수 있는 모듈을 만들었습니다.
+          이런 과정을 통해서 웹에서는 파일 상세에는 접근하기 힘들다는 고정관념을 깰 수 있었던 프로젝트였고 좋은 경험이 되었습니다.
+        </pre>
+      </details>
+      <hr>
+      <div class="page-preserve">
+        <h2>Tisplay</h2>
+        <p>스트리머에게 도네이션 서비스를 하는 스타트업의 웹사이트 개발</p>
+        <p><strong>수행 업무 </strong></p>
+        <div class="indented">
+          <ul class="bulleted-list">
+            <li>유저, 스트리머가 웹 상에서 이미지 및 동영상을 Crop하여 올릴 수 있는 웹 저작도구 개발</li>
+            <li>티스플레이 소개 화면 퍼블리싱</li>
+          </ul>
+        </div>
+        <figure>
+          <a href="https://www.tisplay.kr/" class="bookmark source">
+            <div class="bookmark-info">
+              <div class="bookmark-text">
+                <div class="bookmark-title">Tisplay</div>
+                <div class="bookmark-description">&#x27;(주)트리니들&#x27;(이하 &#x27;회사&#x27;)가 운영하는 &#x27;티스플레이
+                  (tisplay)&#x27;은 정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하 &#x27;정보통신망법&#x27;) 제27조의 2에 의거 이용자의 개인정보보호와 권익을 보호하고
+                  관련된
+                  고충 및 애로사항을 신속하게 처리하기 위해 아래의 개인정보처리방침을 제정·운영하고 있습니다. 회사는 관계법령에서 규정하고 있는 책임과 의무를 준수하고 실천하기 위해 최선의 노력을 하고
+                  있습니다.</div>
+              </div>
+              <div class="bookmark-href"><img src="https://www.tisplay.kr/ko/favicon_tisplay.ico"
+                  class="icon bookmark-icon" />https://www.tisplay.kr/</div>
+            </div><img src="https://tisplay2.z32.web.core.windows.net/images/img_main_03_01.png"
+              class="bookmark-image" />
+          </a>
+        </figure>
+      </div>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background" id="project-animation">웹 애니메이션과 차트</h2>
+      <ul class="bulleted-list">
+        <li>클라이언트(디자이너)가 원하는 샘플 영상과 비슷한 느낌을 만들기 위해 프레임 단위로 샘플을 분석하고, 특징들을 체계화하여 개발</li>
+        <li>높은 fps를 유지하기 위해 WebWorker를 사용하거나 메모리누수를 체크하는 등 최적화</li>
+      </ul>
+      <hr />
+      <h2>더 세로 TV 오디오 비쥬얼라이저</h2>
+      <p>모바일에서 재생한 미디어를 FFT 분석과 함께 재생중인 노래의 제목, 가수까지 보여주는 기능 개발</p>
+      <p><strong>수행 업무</strong>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>Web AudioContext를 이용하여 FFT(Fast fourier transform) 적용</li>
+          <li>WebWorker, Offscreen Canvas를 사용하여 높은 fps의 음형 Visualizer 구현</li>
+          <li>Python, Bluez를 통해 현재 재생되고 있는 음악의 아티스트와 제목 가져오기</li>
+          <li>모바일이 PC를 Bluetooth Speaker로 인식할 수 있도록 리눅스 PC 세팅</li>
+      </div>
+      </p>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/u-UKSSa-t8Y" frameborder="0"></iframe>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
+        이 프로젝트는 모바일 시대, 세로 콘텐츠 대중화에 따라서 TV를 필요에 따라 가로, 세로로 회전해보면 어떠냐는 아이디어에서 시작하였습니다.
+        삼성전자 기획팀에서 저희에게 이러한 기기의 가능성을 검토해보고자 기기 회전을 위한 목업 디바이스 제작부터 회전하는 기기의 특성에 맞는 UX와 실제 스마트폰과 연동할 수 있는 Music Visualizer 등을 의뢰하였습니다.
+
+        저는 이 프로젝트의 개발 책임자로 하드웨어 개발부터 Music Visualizer 개발에 참여하였습니다.
+        제가 맡은 부분에서의 이슈들은 아래와 같았습니다.
+
+        Music Visualizer 개발에서의 도전 과제는 아래와 같습니다.
+        이슈 1. Linux PC에서 어떻게 스마트폰의 음악을 대신 재생하며 가수, 제목을 가져올 수 있느냐?
+        주변에서 아무도 써본 기능이었기 때문에 안되면 어떡하지 굉장히 걱정을 많이 했습니다.
+        그래도 자동차 블루투스는 어떤 앱에서건 음악을 재생하면서 가수랑 트랙정보를 가져올까를 생각해보면서 끈질기게 조사하였고,
+        블루투스의 표준이 있다는 것과 리눅스 세팅 및 파이썬으로 System Bus에 접근하여 가져오는 방법을 알아내어 해당 기능을 구현할 수 있었습니다.
+        그리고 음파 분석을 하기 위해서 입력을 받는 부분 또한 리눅스 오디오 세팅을 통해서 스피커 출력으로 나가는 블루투스 음악을 시스템 내부에서 루프백하여 저희 시스템에서도 사용할 수 있게끔 하는 등 여러 시행착오를 겪으며 이를 해결하였습니다.
+
+        이슈 2. Music Visualizer의 프레임을 어떻게 높일 것이냐
+        Music Visualizer에서의 관건은 매우 빠르게 들어오는 음에 따라 만들어진 화려한 화면을 프레임 드랍 없이 끊기지 않게끔 보여주는 것이었습니다.
+        일반적인 방법으로 캔버스에 그렸을 때 처음 예상과는 달리 프레임 드랍이 심하였고, 이를 해결하기 위해서 캔버스 최적화를 연구하고 자료를 찾아봤습니다.
+        그 결과로 WebWorker와 OffscreenCanvas로 메인 쓰레드에서 그리기 영역을 분리하여 성능을 크게 개선하였고, 이 부분에서 굉장히 좋은 평가를 받을 수 있었습니다.
+      </pre>
+      </details>
+      <hr />
+      <h2>Chart Standard for Samsung</h2>
+      <p>삼성 사내에서 사용되는 차트 디자인 스탠다드 룰을 배포 및 설명하기 위한 가이드 차트 제작</p>
+      <p>
+        <strong>수행업무</strong>
+      </p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>시간의 흐름에 따라 수치의 변화를 다이나믹하게 느낄 수 있는 스캐터차트, 버블차트 등 6종 차트 D3로 개발</li>
+          <li>타임라인에 따라 애니메이션</li>
+          <li>호버 시 Custom tooltip 및 차트 별 강조 애니메이션 개발</li>
+          <li>Legacy 토글 기능 개발</li>
+        </ul>
+      </div>
+      <p>
+      </p>
+      <p><strong>도전 과제</strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>연도에 따라 데이터 값이 변경될 때 이전 셋의 ID 관리를 통해 애니메이션이 정확하게 일어나야 함</li>
+          <li>차트 호버 시 z-index 관리를 통해 유저에게 값을 더욱 명확하게 보여줘야 함</li>
+          <li>스캐터 차트에서 호버 시 값의 변화 추이를 라인으로 표현</li>
+          <li>스캐터 차트에서 Slope탭 선택 시 슬로프 차트로 변경</li>
+        </ul>
+      </div>
+      <iframe width="33%" src="https://www.youtube.com/embed/vfZlbkoJ2TY" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/tocHcV6O0dg" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/5-UrKHpwYEo" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/yz79oHzYYEM" frameborder="0"></iframe>
+      <iframe width="33%" src="https://www.youtube.com/embed/wGS5BUiKulk" frameborder="0"></iframe>
+      <hr />
+      <h2>Dynamic Music Album Maker</h2>
+      <p>스마트폰 내 이미지들로 나만의 뮤직비디오를 자동으로 생성해주는 프로젝트</p>
+      <p>요구사항이 모호해서 어려웠던 프로젝트로 클라이언트가 골라준 샘플 영상들의 룩앤필과 타임라인을 프레임 단위로 분석하였습니다.</p>
+      <p> 애니메이션 파트를 Enter, Main, Leave 3단계로 쪼갰고, 여기에 랜덤 값을 적용하여 애니메이션 조각을 만들었습니다. 이렇게 만들어진 애니메이션 조각들을 조합하여 하나의 영상처럼 보일 수
+        있도록 한 프로젝트입니다. </p>
+      <div class="column-list">
+        <div style="width:81.25%" class="column">
+          <p><strong>수행업무</strong></p>
+          <div class="indented">
+            <ul class="bulleted-list">
+              <li>클라이언트가 원하는 분위기의 동영상들을 프레임 단위로 특징들을 분석</li>
+              <li>해당 영상 특징들을 씬 별로 Processing과 p5.js를 이용하여 템플릿화</li>
+              <li>여러 씬들을 자연스럽게 이어붙일 수 있는 기능 구현</li>
+              <li>스마트폰에서 받아온 이미지와 가사들로 나만의 뮤직비디오를 생성</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/ws5Smbf77As" frameborder="0"></iframe>
+      <p>
+
+      </p>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background">하드웨어 프로토타이핑</h2>
+      <ul class="bulleted-list">
+        <li>삼성전자 제품 디자인팀과 협업하여 신제품의 하드웨어 목업과 함께 UI/UX 디자인을 프레젠테이션 하기 위한 데모 웹앱을 개발하여 제품들이 실제 상용화되는데 성공함</li>
+        <li>Arduino ↔ NodeJS ↔ Web 간 Serial, Websocket 통신 인터페이스 개발</li>
+        <li>다양한 종류의 Sensor, Actuator를 웹과 결합</li>
+      </ul>
+      <hr />
+      <h2>삼성 더 세로TV 1, 2차 프로토타이핑</h2>
+      <p>더 세로 TV의 목업 하드웨어와 데모앱을 제작하여 시나리오 및 사용성을 체크하고, 제품화 컨펌을 위한 데모 제작</p>
+      <p><strong>수행업무</strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>전체 개발 리딩</li>
+          <li>하드웨어 제어를 위한 Arduino 개발 (Event Queue, Button, Relay를 이용한 예외 상황 처리 등)</li>
+          <li>가로 ↔ 세로 변환되는 TV의 특징을 살린 데모웹 개발</li>
+        </ul>
+      </div>
+      <figure class="image"><a href="assets/image_7.png"><img style="width:1000px" src="assets/image_7.png" /></a>
+        <figcaption>출처 : 삼성전자 뉴스룸</figcaption>
+      </figure>
+      <details style="width: 100%">
+        <summary><strong>더 알아보기</strong></summary>
+        <pre>
+        이 프로젝트는 모바일 시대, 세로 콘텐츠 대중화에 따라서 TV를 필요에 따라 가로, 세로로 회전해보면 어떠냐는 아이디어에서 시작하였습니다.
+        삼성전자 기획팀에서 저희에게 이러한 기기의 가능성을 검토해보고자 기기 회전을 위한 목업 디바이스 제작부터 회전하는 기기의 특성에 맞는 UX와 실제 스마트폰과 연동할 수 있는 Music Visualizer 등을 의뢰하였습니다.
+
+        저는 이 프로젝트의 개발 책임자로 하드웨어 개발부터 Music Visualizer 개발에 참여하였습니다.
+        제가 맡은 부분에서의 이슈들은 아래와 같았습니다.
+
+        하드웨어 개발에서의 도전 과제는 아래와 같습니다.
+        이슈 1. 하드웨어 설계 및 목업 업체와의 컨텍
+        이 프로젝트의 메인 컨셉인 데모 웹을 통해 모터를 컨트롤하는 부분은 이 프로젝트의 핵심이지만, 저 혼자 맡을 수밖에 없는 부분이라 개인적으로 큰 부담이 됐었습니다.
+        제가 하는 것이 맞는지 제작 업체와 계속해서 점검하면서 인터페이스를 맞춰나갔고, 결과적으로 이동할 수 있는 범위가 정해져 있는 모터가 있고 좌, 우 이동할 수 있는 Line을 따로 분리하였습니다.
+        그리고 이 Line에 그라운드를 주면 TV가 회전하는 방식으로 최종 결론을 내게 되었고, 릴레이를 이용하여 그라운드를 주는 방식으로 프로토타입 하드웨어를 제작할 수 있었습니다.
+        또한 처음 요구사항에는 기기의 각도에 따라 화면에 영향을 주는 요구사항이 있었습니다. 하지만 이를 위해서는 굉장히 정밀한 센서가 요구되었고, 이는 전체적인 목업 비용 상승 및 프로젝트의 퀄리티를 떨어뜨릴 수 있는 요소라고 판단하여 이를 회전 시작과 끝 부분에만 버튼을 두어서 현재 상태를 4가지로 정의하였습니다.
+        이를 통해 모터가 회전 중일 경우와 대기 중인 경우 등의 케이스에 따라서 명령을 필터링할 수 있게되었고 기기의 안정성을 높일 수 있었습니다.
+
+        이슈 2. 기기와 데모 웹은 어떤 식으로 서로 소통하느냐?
+        시제품 데모 및 발표는 기회가 한 번밖에 없기 때문에 굉장히 중요합니다. 꼭 데모를 성공하기 위해서 다양한 예외 상황들을 정의하여 이에 대응했었습니다.
+        특히 하드웨어와 PC의 통신이 끊기거나, 명령어를 보냈는데 하드웨어의 상태가 이에 대응을 못 하는 상황이거나 혹은 누락되어 기기가 명령을 수행하지 못하는 상황은 상상만 해도 끔찍했습니다.
+        따라서 NodeJS로 시리얼 통신의 재접속 및 명령어 Queue Manager들을 만들어 기기에서 이 명령어를 제대로 accept하면 다시 response 체크를 하는 등의 디테일한 기능들을 추가했었습니다.
+      </pre>
+      </details>
+      <p>
+      </p>
+      <hr />
+      <p> </p>
+      <div class="page-preserve">
+        <h2>갤럭시 워치 S3 프로토타이핑</h2>
+        <p>갤럭시 워치의 신형 모델 목업 하드웨어와 데모 앱을 제작하여 사용성을 체크 및 제품화 컨펌을 위한 프로토타이핑</p>
+        <p><strong>수행 업무</strong></p>
+        <div class="indented">
+          <ul class="bulleted-list">
+            <li>하드웨어 제어를 위한 Arduino 개발</li>
+            <li>차세대 시계 UX의 전체 시나리오에 해당하는 데모앱 개발</li>
+          </ul>
+        </div>
+        <p>
+        </p>
+        <div style="width:50%" class="column"><iframe width="640" height="360"
+            src="https://www.youtube.com/embed/5YS6Y5sgfTE" frameborder="0"></iframe></div>
+        <p></p>
+        <div style="width:50%" class="column"><iframe width="640" height="360"
+            src="https://www.youtube.com/embed/RxcoN3ETkL8" frameborder="0"></iframe></div>
+      </div>
+      <p>
+      </p>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h2 class="section-title block-color-teal_background">개인 프로젝트</h2>
+      <h2>NCS 기출문제</h2>
+      <p>NCS 수학 문제를 자동으로 생성하여 정답, 풀이등을 제공하는 앱</p>
+      <p>Android ⭐3.83 (Download 13K) iOS ⭐4.5 (Download 7K)</p>
+      <p><strong>개발 의도</strong></p>
+      <div class="indented">
+        <ul class="bulleted-list">
+          <li>NCS 수학 문제집을 보면서 연습할 수 있는 예제의 양이 부족하다고 생각하여, 수학 문제를 자동으로 만들어주는 앱을 개발해보고 싶었음</li>
+          <li>모바일 개발을 위해 공부한 Flutter를 활용하여 가시적인 앱 개발 및 서비스 운영</li>
+          <li>Firebase를 이용하여 Serverless 경험 쌓기</li>
+          <li>Firebase Auth, Firestore를 활용하여 사용자 기록 쌓기</li>
+          <li> 이슈 발생 시 긴급하게 대응할 수 있도록 서비스를 분리해보기</li>
+          <li>수학 문제 자동 생성을 위해 수학 문제집들을 분석하여 문제와 정답지, 보기 등을 템플릿화하고, 이를 서버에서 관리하여 문제에 에러가 있을 경우 빠르게 배포</li>
+        </ul>
+      </div>
+
+      <div class="column-list">
+        <div style="width:33.33333333333333%" class="column">
+          <figure class="image"><a href="assets/image_8.png"><img style="width:1242px" src="assets/image_8.png" /></a>
+          </figure>
+        </div>
+        <div style="width:33.333333333333336%" class="column">
+          <figure class="image"><a href="assets/image_9.png"><img style="width:1242px" src="assets/image_9.png" /></a>
+          </figure>
+        </div>
+        <div style="width:33.333333333333336%" class="column">
+          <figure class="image"><a href="assets/image_10.png"><img style="width:1242px" src="assets/image_10.png" /></a>
+          </figure>
+          <p>
+          </p>
+        </div>
+      </div>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">Other Experience</h1>
+      <p>
+      </p>
+      <h2>멘토링</h2>
+      <p>광주 창조경제 혁신센터 오픈랩 IoT 멘토 (2015년 ~ 2017년)</p>
+      <ul class="bulleted-list">
+        <li>개발 입문자들을 대상으로 여러가지 IoT 메이커 활동에 필요한 아이디어 구상 및 실제 H/W 및 S/W 개발을 할 수 있도록 강의 및 멘토링 진행</li>
+        <li>그 외 다양한 해커톤에서 개발 서포터</li>
+      </ul>
+      <figure class="image"><a href="assets/image_11.png"><img style="width:720px" src="assets/image_11.png" /></a>
+      </figure>
+      <p>
+      </p>
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">수상경력</h1>
+      <h2>갤럭시 기어 해커톤 2014 우수상</h2>
+      <h3>삼성전자 2014-05-28</h3>
+      <ul class="bulleted-list">
+        <li>손목 움직임 인식과 갤럭시 워치 자이로를 매칭하여 가리킨 물건의 정보를 워치에 표시해주는 아이디어</li>
+        <li>갤럭시 워치 webapp 개발</li>
+        <li>동작인식 시스템과 연동 샘플 개발</li>
+      </ul>
+      <figure><a href="http://bit.ly/2Onjwra" class="bookmark source">
+          <div class="bookmark-info">
+            <div class="bookmark-text">
+              <div class="bookmark-title">도심 속 한바탕 축제를 열다, 삼성 기어 해커톤 2014 현장</div>
+              <div class="bookmark-description">파릇한 잔디, 음식이 가득한 스낵카, 따스한 담요, 그리고 흥겨운 음악이 흐릅니다. 사람들은 편안한 옷차림으로 거닐고 옹기종기
+                모여 앉아 대화를 나누기도 하는데요. 여기저기 웃음소리가 끊이질 않습니다. &#x27;혹시 봄 소풍이라도 다녀왔나요?&#x27;라고 지레짐작한 분도 있을 것 같은데요. 이곳은 바로
+                애플리케이션 개발 경진대회가 열린 &#x27;삼성 기어 해커톤 2014&#x27; 현장 풍경이랍니다.</div>
+            </div>
+            <div class="bookmark-href"><img src="https://news.samsung.com/kr/favicon.ico"
+                class="icon bookmark-icon" />http://bit.ly/2Onjwra</div>
+          </div><img
+            src="https://img.kr.news.samsung.com/kr/wp-content/uploads/2014/05/%EC%B5%9C%EC%83%81%EB%8B%A811.jpg"
+            class="bookmark-image" />
+        </a></figure>
+
+      <p>
+      </p>
+      <hr>
+      </p>
+      <div class="page-preserve">
+        <h2>드림엔터 IoT 해커톤 2014 장려상</h2>
+        <h3>미래창조과학부 2014-12-21</h3>
+        <ul class="bulleted-list">
+          <li>연인 간 커플링에 IoT를 적용해보는 아이디어</li>
+          <li>피에조와 LED, Bluetooth 모듈을 활용하여 최대한 심플한 하드웨어 개발</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/9tIt-RUGWj4" frameborder="0"></iframe>
+        <p></p>
+        <hr>
+      </div>
+      <div class="page-preserve">
+        <h2>한글 창의 공모전 2015 장려상</h2>
+        <h3>문화체육관광부 2015-10-08</h3>
+        <ul class="bulleted-list">
+          <li>한글의 특징을 살린 한글 학습용 AR 앱</li>
+          <li>자/모음 블럭을 조합하여 AR에 비추면 그와 관련된 동물 등이 블럭 위에 보이고, 글씨를 따라 써볼 수 있는 등 기능 제공</li>
+          <li><strong>Unity3D</strong>와 <strong>Vuforia</strong>를 활용하여 개발</li>
+          <li>자, 모음, 받침 조합에 대한 알고리즘 개발 (ㄱ 과 ㄴ, ㅏ ㅓ ㅗ ㅜ 등)</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/Ur87EKXVENo" frameborder="0"></iframe>
+        <p></p>
+        <hr>
+      </div>
+      <div class="page-preserve">
+        <h2>한중일 패션 웨어러블 해커톤 최우수 미래부장관상 </h2>
+        <h3>미래창조과학부 2015-11-29</h3>
+        <ul class="bulleted-list">
+          <li>중국인 디자이너, 기획자와 함께 프로젝트 진행</li>
+          <li>쉽게 싫증 낼 수 있는 아이들의 캐릭터 의류를 LED모듈로 교체하여 부모가 언제든지 아이 의류의 캐릭터를 바꿀 수 있도록 커스텀한 이미지를 샘플링을 통해 LED Pixel에 나타나도록 개발
+          <li>미아방지를 위해 부모와 일정 거리 이상 떨어 졌을 시 경고음을 발산하는 기능 개발</li>
+        </ul>
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/9yTAmCqbXtA" frameborder="0"></iframe>
+        <p>
+        </p>
+      </div>
+
+      <div class="page-break"></div>
+      <h1 class="section-title block-color-yellow_background">학력 사항</h1>
+      <h3>숭실대 글로벌 미디어 학부 졸업</h3>
+      <p>2009년 3월 ~ 2013년 8월 (편입)</p>
+      <p>학점 4.09/4.50</p>
+      <ul class="bulleted-list">
+        <li>DB, 컴퓨터 그래픽스, 멀티미디어 및 IT 비지니스 관련 수업 이수</li>
+      </ul>
+      <ul class="bulleted-list">
+        <li>졸업 작품 - 헤드트래킹을 활용한 VR 디스플레이와 이를 활용한 게임 개발(Unity3D, MS Kinect)</li>
+      </ul>
+      <hr>
+      <h3>숭실대 전산원 멀티미디어학부 졸업</h3>
+      <p>2007년 3월 ~ 2009년 2월</p>
+      <p>학점 4.30/4.50</p>
+      <hr />
+      <h3>광명고등학교(경기) 졸업</h3>
+      <p>2004년 3월 ~ 2009년 2월</p>
+      <p>
+      </p>
+      <h1 class="section-title block-color-yellow_background">자격증</h1>
+      <h3>정보처리 기사</h3>
+      <p>한국산업인력공단 2013년 5월 31일</p>
+      <h3>멀티미디어 콘텐츠 제작 전문가</h3>
+      <p>한국산업인력공단 2008년 6월 2일</p>
+      <p></p>
+      <h3>한국사 능력 검정 1급 </h3>
+      <p>국사편찬위원회 2018년 8월 11일</p>
+      <p>
+      </p>
+      <p>
+      </p>
+    </div>
+  </article>
+
+  <script>
+    const diff = new Date() - new Date(2016, 6, 1);
+    const day = Math.ceil(diff / (1000 * 60 * 60 * 24));
+    const year = Math.floor(day / 365);
+    const month = Math.floor((day % 365) / 31);
+    document.querySelector('.year').innerText = year;
+    document.querySelector('.month').innerText = month;
+  </script>
+</body>
+
+</html>
